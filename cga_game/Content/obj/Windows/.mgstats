@@ -1,0 +1,7 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"D:/Git/cga_game/cga_game/Content/graphic/glow_frame_1.png","D:/Git/cga_game/cga_game/Content/bin/Windows/graphic/grid_outer.xnb","TextureProcessor","Texture2DContent",5292,250085,0.0693714
+"D:/Git/cga_game/cga_game/Content/graphic/grass.png","D:/Git/cga_game/cga_game/Content/bin/Windows/graphic/grass.xnb","TextureProcessor","Texture2DContent",843,16469,0.0010063
+"D:/Git/cga_game/cga_game/Content/graphic/grid.png","D:/Git/cga_game/cga_game/Content/bin/Windows/graphic/grid.xnb","TextureProcessor","Texture2DContent",5571,65621,0.0032358
+"D:/Git/cga_game/cga_game/Content/graphic/tile_0000.png","D:/Git/cga_game/cga_game/Content/bin/Windows/graphic/tile_0000.xnb","TextureProcessor","Texture2DContent",99,1109,0.0009277
+"D:/Git/cga_game/cga_game/Content/graphic/tile_0001.png","D:/Git/cga_game/cga_game/Content/bin/Windows/graphic/tile_0001.xnb","TextureProcessor","Texture2DContent",144,1109,0.0006484
+"D:/Git/cga_game/cga_game/Content/graphic/tile_0124.png","D:/Git/cga_game/cga_game/Content/bin/Windows/graphic/infantry.xnb","TextureProcessor","Texture2DContent",217,1109,0.0669432

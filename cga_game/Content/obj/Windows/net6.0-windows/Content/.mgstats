@@ -1,0 +1,6 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"D:/Git/2DTinyWar/cga_game/Content/graphic/glow_frame_1.png","D:/Git/2DTinyWar/cga_game/Content/bin/Windows/Content/graphic/grid_outer.xnb","TextureProcessor","Texture2DContent",5292,250085,0.1113915
+"D:/Git/2DTinyWar/cga_game/Content/graphic/grass.png","D:/Git/2DTinyWar/cga_game/Content/bin/Windows/Content/graphic/grass.xnb","TextureProcessor","Texture2DContent",843,16469,0.0033983
+"D:/Git/2DTinyWar/cga_game/Content/graphic/grid.png","D:/Git/2DTinyWar/cga_game/Content/bin/Windows/Content/graphic/grid.xnb","TextureProcessor","Texture2DContent",5571,65621,0.0068815
+"D:/Git/2DTinyWar/cga_game/Content/graphic/tile_0000.png","D:/Git/2DTinyWar/cga_game/Content/bin/Windows/Content/graphic/tile_0000.xnb","TextureProcessor","Texture2DContent",99,1109,0.0029021
+"D:/Git/2DTinyWar/cga_game/Content/graphic/tile_0001.png","D:/Git/2DTinyWar/cga_game/Content/bin/Windows/Content/graphic/tile_0001.xnb","TextureProcessor","Texture2DContent",144,1109,0.0028166
