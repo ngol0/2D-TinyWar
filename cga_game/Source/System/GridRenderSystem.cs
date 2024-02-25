@@ -12,9 +12,9 @@ namespace Strategy
         SpriteBatch spriteBatch;
         private ComponentMapper<Transform> transformMapper;
         private ComponentMapper<Sprite> spriteMapper;
-        private ComponentMapper<GridItemUI> gridItemUIMapper;
+        private ComponentMapper<GridItem> gridItemUIMapper;
 
-        public GridRenderSystem(SpriteBatch spriteBatch) : base(Aspect.All(typeof(Sprite), typeof(Transform), typeof(GridItemUI)))
+        public GridRenderSystem(SpriteBatch spriteBatch) : base(Aspect.All(typeof(Sprite), typeof(Transform), typeof(GridItem)))
         {
             this.spriteBatch = spriteBatch;
         }
@@ -23,7 +23,7 @@ namespace Strategy
         {
             transformMapper = mapperService.GetMapper<Transform>();
             spriteMapper = mapperService.GetMapper<Sprite>();
-            gridItemUIMapper = mapperService.GetMapper<GridItemUI>();
+            gridItemUIMapper = mapperService.GetMapper<GridItem>();
         }
 
         public override void Draw(GameTime gameTime)

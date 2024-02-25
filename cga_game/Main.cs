@@ -38,11 +38,10 @@ namespace Strategy
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             scene = new Scene();
-            scene.InitLevelGrid();
-
+          
             world = new WorldBuilder()
                 .AddSystem(new UnitSelectionSystem(scene))
-                .AddSystem(new GridDebugSystem())
+                .AddSystem(new UnitMovementSystem(scene))
                 .AddSystem(new GridRenderSystem(spriteBatch))
                 .AddSystem(new RenderSystem(spriteBatch))
                 .Build();
@@ -50,8 +49,7 @@ namespace Strategy
             SpriteLoader.LoadAllSprite();
             Globals.entityFactory = new EntityFactory(world);
 
-            scene.InitGridItemUI();
-            scene.InitTroop();
+            scene.Init();
         }
 
         protected override void Update(GameTime gameTime)

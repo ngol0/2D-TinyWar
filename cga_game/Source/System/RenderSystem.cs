@@ -13,7 +13,7 @@ namespace Strategy
         private ComponentMapper<Transform> transformMapper;
         private ComponentMapper<Sprite> spriteMapper;
 
-        public RenderSystem(SpriteBatch spriteBatch) : base(Aspect.All(typeof(Sprite), typeof(Transform)).Exclude(typeof(GridItemUI)))
+        public RenderSystem(SpriteBatch spriteBatch) : base(Aspect.All(typeof(Sprite), typeof(Transform)).Exclude(typeof(GridItem)))
         {
             this.spriteBatch = spriteBatch;
         }

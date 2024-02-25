@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using MonoGame.Extended.Entities;
 
 namespace Strategy.Grid
 {
@@ -11,7 +12,7 @@ namespace Strategy.Grid
         private int cellSize;
 
         public int CellSize() { return cellSize; }
-        private GridItem[,] gridItemArray;
+        private Entity[,] gridItemArray;
 
         public GridSystem(int width, int height, int cellSize)
         {
@@ -19,15 +20,16 @@ namespace Strategy.Grid
             this.height = height;
             this.cellSize = cellSize;
 
-            gridItemArray = new GridItem[width, height];
+            gridItemArray = new Entity[width, height];
 
             for (int x = 0; x < width; x++)
             {
                 for (int y = 0; y < height; y++)
                 {
                     GridPosition gridPosition = new GridPosition(x, y);
+                    Vector2 worldPos = GetWorldPosition(gridPosition);
 
-                    gridItemArray[x, y] = new GridItem(this, gridPosition);
+                    gridItemArray[x, y] = Globals.entityFactory.CreateGridItemUI(new Transform() { gridPos = gridPosition, worldPos = worldPos, scale = cellSize });
                 }
             }
         }
@@ -46,7 +48,7 @@ namespace Strategy.Grid
 
         public GridItem GetGridItem(GridPosition gridPos)
         {
-            return gridItemArray[gridPos.x, gridPos.y];
+            return gridItemArray[gridPos.x, gridPos.y].Get<GridItem>();
         }
 
         public bool IsValidGridPos(GridPosition gridPos)

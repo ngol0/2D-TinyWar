@@ -94,12 +94,12 @@ D:\Git\TinyWar\cga_game\obj\Debug\net6.0-windows\cga_game.genruntimeconfig.cache
 D:\Git\TinyWar\cga_game\obj\Debug\net6.0-windows\ref\cga_game.dll
 D:\Git\TinyWar\cga_game\obj\Debug\net6.0-windows\cga_game.sourcelink.json
 D:\Git\2DTinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\glow_frame_1.xnb
-D:\Git\2DTinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\tile_0124.xnb
 D:\Git\2DTinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\grass.xnb
 D:\Git\2DTinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\grid.xnb
 D:\Git\2DTinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\grid_outer.xnb
 D:\Git\2DTinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\tile_0000.xnb
 D:\Git\2DTinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\tile_0001.xnb
+D:\Git\2DTinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\tile_0124.xnb
 D:\Git\2DTinyWar\cga_game\bin\Debug\net6.0-windows\cga_game.exe
 D:\Git\2DTinyWar\cga_game\bin\Debug\net6.0-windows\cga_game.deps.json
 D:\Git\2DTinyWar\cga_game\bin\Debug\net6.0-windows\cga_game.runtimeconfig.json
@@ -134,6 +134,7 @@ D:\Git\2DTinyWar\cga_game\obj\Debug\net6.0-windows\cga_game.GeneratedMSBuildEdit
 D:\Git\2DTinyWar\cga_game\obj\Debug\net6.0-windows\cga_game.AssemblyInfoInputs.cache
 D:\Git\2DTinyWar\cga_game\obj\Debug\net6.0-windows\cga_game.AssemblyInfo.cs
 D:\Git\2DTinyWar\cga_game\obj\Debug\net6.0-windows\cga_game.csproj.CoreCompileInputs.cache
+D:\Git\2DTinyWar\cga_game\obj\Debug\net6.0-windows\cga_game.sourcelink.json
 D:\Git\2DTinyWar\cga_game\obj\Debug\net6.0-windows\cga_game.csproj.CopyComplete
 D:\Git\2DTinyWar\cga_game\obj\Debug\net6.0-windows\cga_game.dll
 D:\Git\2DTinyWar\cga_game\obj\Debug\net6.0-windows\refint\cga_game.dll

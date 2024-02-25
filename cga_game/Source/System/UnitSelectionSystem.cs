@@ -5,18 +5,19 @@ using MonoGame.Extended.Entities;
 using MonoGame.Extended.Entities.Systems;
 using Microsoft.Xna.Framework;
 using Strategy.Grid;
+using System.Collections.Generic;
 
 namespace Strategy
 {
     class UnitSelectionSystem : EntityProcessingSystem
     {
-        private ComponentMapper<Sprite> spriteMapper;
+        private ComponentMapper<UnitMovement> unitMovementMapper;
         private ComponentMapper<BoxCollider2D> boxColliderMapper;
 
-        GridItem currentGridItem;
+        UnitMovement currentUnitMovement;
         Scene scene;
 
-        public UnitSelectionSystem(Scene scene) : base(Aspect.All(typeof(Transform), typeof(UnitMovement)))
+        public UnitSelectionSystem(Scene scene) : base(Aspect.All(typeof(BoxCollider2D), typeof(UnitMovement)))
         {
             this.scene = scene;
         }
@@ -24,12 +25,35 @@ namespace Strategy
         public override void Initialize(IComponentMapperService mapperService)
         {
             boxColliderMapper = mapperService.GetMapper<BoxCollider2D>();
-            spriteMapper = mapperService.GetMapper<Sprite>();
+            unitMovementMapper = mapperService.GetMapper<UnitMovement>();
+        }
+
+        private void GetValidGridPosition(GridPosition unitGridPos)
+        {
+            int maxMovementDistX = currentUnitMovement.maxMoveDistanceX;
+            int maxMovementDistY = currentUnitMovement.maxMoveDistanceY;
+
+            for (int x = -maxMovementDistX; x <= maxMovementDistX; x++)
+            {
+                for (int y = -maxMovementDistY; y <= maxMovementDistY; y++)
+                {
+                    GridPosition offsetGridPosition = new GridPosition(x, y);
+                    GridPosition testGridPosition = unitGridPos + offsetGridPosition;
+
+                    if (!scene.IsValidPosGrid(testGridPosition)) continue;
+                    if (testGridPosition == unitGridPos) continue;
+                    if (!scene.IsGridWalkable(testGridPosition)) continue;
+
+                    GridItem gridItem = scene.GetGridItem(testGridPosition);
+                    currentUnitMovement.validGridPosList.Add(gridItem);
+                    gridItem.color = Color.Orange;
+                }
+            }
         }
 
         public override void Process(GameTime gameTime, int entityId)
         {
-            var sprite = spriteMapper.Get(entityId);
+            var unitMovement = unitMovementMapper.Get(entityId);
             var collider = boxColliderMapper.Get(entityId);
 
             Vector2 mousePosition = new Vector2(Globals.input.currentMouseState.X, Globals.input.currentMouseState.Y);
@@ -40,19 +64,40 @@ namespace Strategy
             {
                 if (Globals.input.GetIsMouseButtonDown(Input.MouseButton.Left, true))
                 {
-                    if (currentGridItem != null)
-                    {
-                        currentGridItem.SetSelected(false);
-                    }
-                    currentGridItem = scene.GetGridItem(gridPos);
-                    currentGridItem.SetSelected(true);
+                    //get unit movement grid pos
+                    if (currentUnitMovement != null) { ResetMovementGrid(); }
+
+                    currentUnitMovement = unitMovement;
+                    currentUnitMovement.isSelected = true;
+                    scene.GetGridItem(currentUnitMovement.currentGridPosition).color = Color.Green;
+
+                    if (currentUnitMovement.turn <= 0) return;
+
+                    GetValidGridPosition(gridPos);
+                }
+                //if hover...
+                else
+                {
+                    //todo: if hover > show unit info
                 }
             }
+            //deselect
             if (Globals.input.GetIsMouseButtonDown(Input.MouseButton.Right, true))
             {
-                if (currentGridItem != null) { currentGridItem.SetSelected(false); }
-                currentGridItem = null;
+                if (currentUnitMovement != null) { ResetMovementGrid(); }
             }
+        }
+
+        private void ResetMovementGrid()
+        {
+            scene.GetGridItem(currentUnitMovement.currentGridPosition).color = Color.White;
+            currentUnitMovement.isSelected = false;
+
+            foreach (var grid in currentUnitMovement.validGridPosList)
+            {
+                grid.color = Color.White;
+            }
+            currentUnitMovement.validGridPosList.Clear();
         }
     }
 }

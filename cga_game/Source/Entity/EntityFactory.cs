@@ -23,7 +23,7 @@ namespace Strategy
             entity.Attach(transform);
             entity.Attach(new Sprite() { texture = SpriteLoader.groundTexture });
             entity.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
-            entity.Attach(new GridItemUI());
+            entity.Attach(new GridItem(transform.gridPos));
             
             return entity;
         }
@@ -34,7 +34,7 @@ namespace Strategy
             entity.Attach(transform);
             entity.Attach(new Sprite() { texture = SpriteLoader.infantryTexture });
             entity.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
-            entity.Attach(new UnitMovement());
+            entity.Attach(new UnitMovement(transform.gridPos, 2, 1));
 
             return entity;
         }
