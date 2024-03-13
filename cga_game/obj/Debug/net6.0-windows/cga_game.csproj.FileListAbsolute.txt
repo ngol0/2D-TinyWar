@@ -196,3 +196,15 @@ D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\plane.xnb
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\tank.xnb
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\gameFont.xnb
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\resource.xnb
+D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\infantrybtn.xnb
+D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\moneytwnbtn.xnb
+D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\planebtn.xnb
+D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\tankbtn.xnb
+D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\money.xnb
+D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\moneybtn.xnb
+D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\infantry_green.xnb
+D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\plane_red.xnb
+D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\tank_blue.xnb
+D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\infantrybtn_green.xnb
+D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\planebtn_red.xnb
+D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\tankbtn_blue.xnb

@@ -33,8 +33,12 @@ namespace Strategy
             // Draw the string twice to create a drop shadow, first colored black
             // and offset one pixel to the bottom right, then again in white at the
             // intended position. This makes text easier to read over the background.
-            spriteBatch.DrawString(spriteFont, text, new Vector2(65, 600), Color.Black);
-            spriteBatch.DrawString(spriteFont, text, new Vector2(64, 600), Color.White);
+            spriteBatch.DrawString(spriteFont, text, new Vector2(355, 520), Color.Black);
+            spriteBatch.DrawString(spriteFont, text, new Vector2(354, 520), Color.White);
+
+            string infantryMoney = UnitData.infantry.cost.ToString();
+            //spriteBatch.DrawString(spriteFont, infantryMoney, new Vector2(55, 560), Color.Black);
+            spriteBatch.DrawString(spriteFont, infantryMoney, new Vector2(55, 560), Color.Black, 0.0f, new Vector2(0,0), 0.5f, SpriteEffects.None, 0.0f);
         } 
     }
 }

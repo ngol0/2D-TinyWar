@@ -69,13 +69,29 @@ namespace Strategy
             return moneyTower;
         }
 
-        public Entity CreateButton(Transform transform)
+        public Entity CreateButton(Transform transform, string type)
         {
             var button = world.CreateEntity();
             button.Attach(transform);
-            button.Attach(new Sprite() { texture = SpriteLoader.unitButton });
             button.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
             button.Attach(new UnitButton());
+
+            if (type == UnitTypeString.INFANTRY) 
+            {
+                button.Attach(new Sprite() { texture = SpriteLoader.infantryBtn });
+            }
+            else if (type == UnitTypeString.TANK)
+            {
+                button.Attach(new Sprite() { texture = SpriteLoader.tankBtn });
+            }
+            else if (type == UnitTypeString.PLANE)
+            {
+                button.Attach(new Sprite() { texture = SpriteLoader.planeBtn });
+            }
+            else if (type == UnitTypeString.RESOURCE)
+            {
+                button.Attach(new Sprite() { texture = SpriteLoader.moneyTowerBtn });
+            }
 
             return button;
         }

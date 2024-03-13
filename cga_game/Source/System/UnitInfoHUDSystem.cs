@@ -7,7 +7,8 @@ using Strategy.Grid;
 
 namespace Strategy
 {
-    class UnitInfoDisplaySystem
+    class UnitInfoHUDSystem
     {
+
     }
 }

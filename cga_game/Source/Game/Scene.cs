@@ -37,15 +37,10 @@ namespace Strategy
 
         private void InitUnitList()
         {
-            Unit infantry = new Unit() { name = UnitType.INFANTRY, cost = 50 };
-            Unit tank = new Unit() { name = UnitType.TANK, cost = 80 };
-            Unit plane = new Unit() { name = UnitType.PLANE, cost = 100 };
-            Unit tower = new Unit() { name = UnitType.RESOURCE, cost = 20 };
-
-            unitList.Add(infantry);
-            unitList.Add(tank);
-            unitList.Add(plane);
-            unitList.Add(tower);
+            unitList.Add(UnitData.tower);
+            unitList.Add(UnitData.infantry);
+            unitList.Add(UnitData.tank);
+            unitList.Add(UnitData.plane);
         }
 
         private void InitLevelGrid()
@@ -57,8 +52,10 @@ namespace Strategy
         {
             for (int i = 0; i < unitList.Count; i++)
             {
-                Vector2 buttonPos = new Vector2(500 + i*60, 500);
-                var button = Globals.entityFactory.CreateButton(new Transform() { gridPos = GetGridPosition(buttonPos), worldPos = buttonPos, scale = 50 });
+                Vector2 buttonPos = new Vector2(50 + i*60, 520);
+                var button = Globals.entityFactory.CreateButton(
+                    new Transform() { gridPos = GetGridPosition(buttonPos), worldPos = buttonPos, scale = 50 },
+                    unitList[i].name);
 
                 //init data for each button
                 button.Get<UnitButton>().unitType = unitList[i];
@@ -67,26 +64,26 @@ namespace Strategy
 
         public void InitInfantry(GridPosition position)
         {
-            Vector2 worldPosition = GetWorldPosition(position) + new Vector2(1,1);
-            var infantry = Globals.entityFactory.CreateInfantryUnit(new Transform() { gridPos = position, worldPos = worldPosition, scale = 45 });
+            Vector2 worldPosition = GetWorldPosition(position) + new Vector2(5,5);
+            var infantry = Globals.entityFactory.CreateInfantryUnit(new Transform() { gridPos = position, worldPos = worldPosition, scale = 40 });
         }
 
         public void InitTank(GridPosition position)
         {
-            Vector2 worldPosition = GetWorldPosition(position) + new Vector2(3, 3);
-            var tank = Globals.entityFactory.CreateTank(new Transform() { gridPos = position, worldPos = worldPosition, scale = 45 });
+            Vector2 worldPosition = GetWorldPosition(position) + new Vector2(5, 5);
+            var tank = Globals.entityFactory.CreateTank(new Transform() { gridPos = position, worldPos = worldPosition, scale = 40 });
         }
 
         public void InitPlane(GridPosition position)
         {
-            Vector2 worldPosition = GetWorldPosition(position) + new Vector2(3, 3);
-            var plane = Globals.entityFactory.CreatePlane(new Transform() { gridPos = position, worldPos = worldPosition, scale = 45 });
+            Vector2 worldPosition = GetWorldPosition(position) + new Vector2(5, 5);
+            var plane = Globals.entityFactory.CreatePlane(new Transform() { gridPos = position, worldPos = worldPosition, scale = 40 });
         }
 
         public void InitMoneyTower(GridPosition position)
         {
-            Vector2 worldPosition = GetWorldPosition(position) + new Vector2(3, 3);
-            var tower = Globals.entityFactory.CreateMoneyTower(new Transform() { gridPos = position, worldPos = worldPosition, scale = 45 });
+            Vector2 worldPosition = GetWorldPosition(position) + new Vector2(5, 5);
+            var tower = Globals.entityFactory.CreateMoneyTower(new Transform() { gridPos = position, worldPos = worldPosition, scale = 40 });
         }
 
         public void SpendMoney()

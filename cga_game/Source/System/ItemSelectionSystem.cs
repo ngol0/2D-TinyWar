@@ -52,7 +52,7 @@ namespace Strategy
 
                     scene.currentSelectedUnitButton = unitButton;
                     scene.currentSelectedUnitButton.isSelected = true;
-                    sprite.color = Color.Green;
+                    sprite.color = Color.MediumSeaGreen;
                 }
                 //if hover...
                 else
