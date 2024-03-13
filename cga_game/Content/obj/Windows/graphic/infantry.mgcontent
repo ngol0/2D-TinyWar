@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>D:/Git/cga_game/cga_game/Content/graphic/tile_0124.png</SourceFile>
-  <SourceTime>2023-08-08T10:35:47.003338+01:00</SourceTime>
-  <DestFile>D:/Git/cga_game/cga_game/Content/bin/Windows/graphic/infantry.xnb</DestFile>
-  <DestTime>2024-02-19T16:04:25.8580257+00:00</DestTime>
+  <SourceFile>D:/Git/2D-TinyWar/cga_game/Content/graphic/infantry.png</SourceFile>
+  <SourceTime>2023-08-08T10:35:49.2474808+01:00</SourceTime>
+  <DestFile>D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/infantry.xnb</DestFile>
+  <DestTime>2024-03-13T16:33:51.2683578+00:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T12:44:56+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

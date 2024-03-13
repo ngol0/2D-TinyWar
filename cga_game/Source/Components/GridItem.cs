@@ -14,7 +14,7 @@ namespace Strategy.Grid
         public Color color = Color.White;
 
         //setter
-        public void SetWalkable(bool available) 
+        public void SetPlaceable(bool available) 
         { 
             isWalkable = available; 
         }

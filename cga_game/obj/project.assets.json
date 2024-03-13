@@ -7654,11 +7654,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Git\\2DTinyWar\\cga_game\\cga_game.csproj",
+      "projectUniqueName": "D:\\Git\\2D-TinyWar\\cga_game\\cga_game.csproj",
       "projectName": "cga_game",
-      "projectPath": "D:\\Git\\2DTinyWar\\cga_game\\cga_game.csproj",
+      "projectPath": "D:\\Git\\2D-TinyWar\\cga_game\\cga_game.csproj",
       "packagesPath": "C:\\Users\\Lam Ngo\\.nuget\\packages\\",
-      "outputPath": "D:\\Git\\2DTinyWar\\cga_game\\obj\\",
+      "outputPath": "D:\\Git\\2D-TinyWar\\cga_game\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

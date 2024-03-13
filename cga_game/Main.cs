@@ -10,6 +10,7 @@ namespace Strategy
     {
         private GraphicsDeviceManager graphic;
         private SpriteBatch spriteBatch;
+        private SpriteFont font;
         Scene scene;
         World world;
 
@@ -36,14 +37,17 @@ namespace Strategy
             Globals.input = new InputManager();
             Globals.contentManager = this.Content;
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            font = Globals.contentManager.Load<SpriteFont>("graphic/gameFont");
 
             scene = new Scene();
-          
+
             world = new WorldBuilder()
-                .AddSystem(new UnitSelectionSystem(scene))
-                .AddSystem(new UnitMovementSystem(scene))
+                .AddSystem(new MoneyGenerateSystem(scene))
+                .AddSystem(new UnitSpawnSystem(scene))
                 .AddSystem(new GridRenderSystem(spriteBatch))
+                .AddSystem(new ItemSelectionSystem(scene))
                 .AddSystem(new RenderSystem(spriteBatch))
+                .AddSystem(new MoneyHUDSystem(spriteBatch, font, scene))
                 .Build();
 
             SpriteLoader.LoadAllSprite();

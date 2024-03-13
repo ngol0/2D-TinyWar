@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FZbmoXwdX5OPwX2Ra46rUs9MJDcq9KH1t4VpyZ8JoKbMfaL+ryamRAQg+j9CUDNkLBMARGLyawKlh8G9x8LCAQ==",
+  "dgSpecHash": "usV51XPv/uXCn5CWbLMFVC5REW7ZySIIZHYVelZ5C0O8HZa9HxVWzbpGna+u6nbI5lmEfCk2nKLFhEfLVsbjDA==",
   "success": true,
-  "projectFilePath": "D:\\Git\\2DTinyWar\\cga_game\\cga_game.csproj",
+  "projectFilePath": "D:\\Git\\2D-TinyWar\\cga_game\\cga_game.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lam Ngo\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Users\\Lam Ngo\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",

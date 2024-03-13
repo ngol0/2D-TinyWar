@@ -6,5 +6,6 @@ namespace Strategy
     class Sprite
     {
         public Texture2D texture;
+        public Color color = Color.White;
     }
 }

@@ -4,19 +4,31 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/Git/cga_game/cga_game/Content/graphic/glow_frame_1.png</File>
-    <File>D:/Git/cga_game/cga_game/Content/graphic/grass.png</File>
-    <File>D:/Git/cga_game/cga_game/Content/graphic/grid.png</File>
-    <File>D:/Git/cga_game/cga_game/Content/graphic/tile_0000.png</File>
-    <File>D:/Git/cga_game/cga_game/Content/graphic/tile_0001.png</File>
-    <File>D:/Git/cga_game/cga_game/Content/graphic/tile_0124.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/../../../../City Uni London/plane.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/button.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/gameFont.spritefont</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/glow_frame_1.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/grass.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/grid.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/infantry.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/plane.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/resource.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/tank.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/tile_0000.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/tile_0001.png</File>
   </SourceFiles>
   <DestFiles>
+    <File>graphic/plane.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File>graphic/grid_outer.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
-    <File>graphic/infantry.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

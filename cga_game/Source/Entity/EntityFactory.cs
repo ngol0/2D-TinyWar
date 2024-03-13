@@ -19,24 +19,65 @@ namespace Strategy
 
         public Entity CreateGridItemUI(Transform transform)
         {
-            var entity = world.CreateEntity();
-            entity.Attach(transform);
-            entity.Attach(new Sprite() { texture = SpriteLoader.groundTexture });
-            entity.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
-            entity.Attach(new GridItem(transform.gridPos));
+            var gridItem = world.CreateEntity();
+            gridItem.Attach(transform);
+            gridItem.Attach(new Sprite() { texture = SpriteLoader.groundTexture });
+            gridItem.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
+            gridItem.Attach(new GridItem(transform.gridPos));
             
-            return entity;
+            return gridItem;
         }
 
         public Entity CreateInfantryUnit(Transform transform)
         {
-            var entity = world.CreateEntity();
-            entity.Attach(transform);
-            entity.Attach(new Sprite() { texture = SpriteLoader.infantryTexture });
-            entity.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
-            entity.Attach(new UnitMovement(transform.gridPos, 2, 1));
+            var infantry = world.CreateEntity();
+            infantry.Attach(transform);
+            infantry.Attach(new Sprite() { texture = SpriteLoader.infantryTexture });
+            infantry.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
 
-            return entity;
+            return infantry;
+        }
+
+        public Entity CreateTank(Transform transform)
+        {
+            var tank = world.CreateEntity();
+            tank.Attach(transform);
+            tank.Attach(new Sprite() { texture = SpriteLoader.tankTexture });
+            tank.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
+
+            return tank;
+        }
+
+        public Entity CreatePlane(Transform transform)
+        {
+            var plane = world.CreateEntity();
+            plane.Attach(transform);
+            plane.Attach(new Sprite() { texture = SpriteLoader.planeTexture });
+            plane.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
+
+            return plane;
+        }
+
+        public Entity CreateMoneyTower(Transform transform)
+        {
+            var moneyTower = world.CreateEntity();
+            moneyTower.Attach(transform);
+            moneyTower.Attach(new Sprite() { texture = SpriteLoader.moneyTowerTexture });
+            moneyTower.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
+            moneyTower.Attach(new MoneyGenerator());
+
+            return moneyTower;
+        }
+
+        public Entity CreateButton(Transform transform)
+        {
+            var button = world.CreateEntity();
+            button.Attach(transform);
+            button.Attach(new Sprite() { texture = SpriteLoader.unitButton });
+            button.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
+            button.Attach(new UnitButton());
+
+            return button;
         }
     }
 }

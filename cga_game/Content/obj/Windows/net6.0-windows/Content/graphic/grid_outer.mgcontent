@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>D:/Git/2DTinyWar/cga_game/Content/graphic/glow_frame_1.png</SourceFile>
+  <SourceFile>D:/Git/2D-TinyWar/cga_game/Content/graphic/glow_frame_1.png</SourceFile>
   <SourceTime>2024-02-17T15:23:07.0943476+00:00</SourceTime>
-  <DestFile>D:/Git/2DTinyWar/cga_game/Content/bin/Windows/Content/graphic/grid_outer.xnb</DestFile>
-  <DestTime>2024-02-24T17:10:07.471311+00:00</DestTime>
+  <DestFile>D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/grid_outer.xnb</DestFile>
+  <DestTime>2024-03-13T11:12:52.6172044+00:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T12:44:56+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

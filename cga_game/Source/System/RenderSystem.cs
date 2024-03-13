@@ -35,7 +35,7 @@ namespace Strategy
                     sprite.texture,
                     new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale),
                     null,
-                    Color.White,
+                    sprite.color,
                     0f,
                     Vector2.Zero,
                     SpriteEffects.None,
