@@ -46,6 +46,7 @@ namespace Strategy
                 .AddSystem(new UnitSpawnSystem(scene))
                 .AddSystem(new GridRenderSystem(spriteBatch))
                 .AddSystem(new ItemSelectionSystem(scene))
+                .AddSystem(new EnemySpawnSystem(scene))
                 .AddSystem(new RenderSystem(spriteBatch))
                 .AddSystem(new MoneyHUDSystem(spriteBatch, font, scene))
                 .Build();

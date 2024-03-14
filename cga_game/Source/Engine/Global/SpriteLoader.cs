@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
+using MonoGame.Extended.Content;
 
 namespace Strategy
 {
@@ -18,6 +19,13 @@ namespace Strategy
         public static Texture2D planeBtn;
         public static Texture2D moneyTowerBtn;
 
+        //enemy
+        public static Texture2D alienTexture;
+        public static Texture2D robotTexture;
+        public static Texture2D bombTexture;
+        public static Texture2D batTexture;
+
+
         public static void LoadAllSprite()
         {
             groundTexture = Globals.contentManager.Load<Texture2D>("graphic/grass");
@@ -33,6 +41,12 @@ namespace Strategy
             tankBtn = Globals.contentManager.Load<Texture2D>("graphic/tankbtn_up");
             planeBtn = Globals.contentManager.Load<Texture2D>("graphic/planebtn_up");
             moneyTowerBtn = Globals.contentManager.Load<Texture2D>("graphic/money_up");
+
+            //enemy
+            alienTexture = Globals.contentManager.Load<Texture2D>("graphic/alien1");
+            robotTexture = Globals.contentManager.Load<Texture2D>("graphic/robot1");
+            bombTexture = Globals.contentManager.Load<Texture2D>("graphic/bomb");
+            batTexture = Globals.contentManager.Load<Texture2D>("graphic/bat1");
         }
     }
 }

@@ -1,5 +1,11 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"D:/Git/2D-TinyWar/cga_game/Content/../../../../City Uni London/plane.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/plane.xnb","TextureProcessor","Texture2DContent",210,1109,0.0674696
+"D:/Git/2D-TinyWar/cga_game/Content/../../../../City Uni London/plane.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/plane.xnb","TextureProcessor","Texture2DContent",210,1109,0.0675035
+"D:/Git/2D-TinyWar/cga_game/Content/graphic/alien1.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/alien1.xnb","TextureProcessor","Texture2DContent",258,2389,0.0022816
+"D:/Git/2D-TinyWar/cga_game/Content/graphic/alien2.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/alien2.xnb","TextureProcessor","Texture2DContent",255,2389,0.0011853
+"D:/Git/2D-TinyWar/cga_game/Content/graphic/bat1.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/bat1.xnb","TextureProcessor","Texture2DContent",242,2389,0.0013334
+"D:/Git/2D-TinyWar/cga_game/Content/graphic/bat2.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/bat2.xnb","TextureProcessor","Texture2DContent",218,2389,0.0013588
+"D:/Git/2D-TinyWar/cga_game/Content/graphic/bat3.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/bat3.xnb","TextureProcessor","Texture2DContent",234,2389,0.0015182
+"D:/Git/2D-TinyWar/cga_game/Content/graphic/bomb.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/bomb.xnb","TextureProcessor","Texture2DContent",253,2389,0.0012283
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/button.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/button.xnb","TextureProcessor","Texture2DContent",219,4181,0.0008743
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/gameFont.spritefont","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/gameFont.xnb","FontDescriptionProcessor","SpriteFontContent",2009,70687,0.0554999
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/glow_frame_1.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/grid_outer.xnb","TextureProcessor","Texture2DContent",5292,250085,0.0070078
@@ -11,9 +17,12 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/money_up.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/money_up.xnb","TextureProcessor","Texture2DContent",479,3669,0.0069187
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/money.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/money.xnb","TextureProcessor","Texture2DContent",205,1109,0.0008155
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/plane_red.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/plane_red.xnb","TextureProcessor","Texture2DContent",210,1109,0.0007559
-"D:/Git/2D-TinyWar/cga_game/Content/graphic/plane.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/plane.xnb","TextureProcessor","Texture2DContent",210,1109,0.0006583
+"D:/Git/2D-TinyWar/cga_game/Content/graphic/plane.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/plane.xnb","TextureProcessor","Texture2DContent",210,1109,0.0005831
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/planebtn_up.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/planebtn_up.xnb","TextureProcessor","Texture2DContent",491,3669,0.0007167
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/resource.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/resource.xnb","TextureProcessor","Texture2DContent",197,1109,0.0007481
+"D:/Git/2D-TinyWar/cga_game/Content/graphic/robot1.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/robot1.xnb","TextureProcessor","Texture2DContent",231,2389,0.0011834
+"D:/Git/2D-TinyWar/cga_game/Content/graphic/robot2.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/robot2.xnb","TextureProcessor","Texture2DContent",228,2389,0.0009258
+"D:/Git/2D-TinyWar/cga_game/Content/graphic/robot3.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/robot3.xnb","TextureProcessor","Texture2DContent",217,2389,0.0014122
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/tank_blue.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/tank_blue.xnb","TextureProcessor","Texture2DContent",229,1109,0.0007675
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/tank.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/tank.xnb","TextureProcessor","Texture2DContent",229,1109,0.0008077
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/tankbtn_up.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/tankbtn_up.xnb","TextureProcessor","Texture2DContent",515,3669,0.0007158

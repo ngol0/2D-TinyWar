@@ -5,6 +5,12 @@
   <Config />
   <SourceFiles>
     <File>D:/Git/2D-TinyWar/cga_game/Content/../../../../City Uni London/plane.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/alien1.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/alien2.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/bat1.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/bat2.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/bat3.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/bomb.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/button.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/gameFont.spritefont</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/glow_frame_1.png</File>
@@ -19,6 +25,9 @@
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/plane.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/planebtn_up.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/resource.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/robot1.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/robot2.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/robot3.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/tank_blue.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/tank.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/tankbtn_up.png</File>
@@ -29,7 +38,16 @@
     <File>graphic/plane.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File>graphic/grid_outer.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

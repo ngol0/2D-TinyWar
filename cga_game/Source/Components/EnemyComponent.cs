@@ -9,6 +9,6 @@ namespace Strategy
 {
     class EnemyComponent
     {
-        public int health;
+        public EnemyType enemyType;
     }
 }

@@ -38,6 +38,7 @@ namespace Strategy
             InitLevelGrid();
             InitUnitList();
             InitUnitButtons();
+            InitEnemySpawner();
 
             currentMoneyAmount = 100;
         }
@@ -79,7 +80,13 @@ namespace Strategy
 
         public void InitEnemySpawner()
         {
+            for (int i = 0; i < gridHeight; i++)
+            {
+                GridPosition pos = new GridPosition(gridWidth, i);
 
+                Globals.entityFactory.CreateEnemySpawner(
+                    new Transform() { gridPos = pos, worldPos = GetWorldPosition(pos), scale = 40});
+            }
         }
 
         public void SpendMoney()

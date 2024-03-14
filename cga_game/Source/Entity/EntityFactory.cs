@@ -102,23 +102,23 @@ namespace Strategy
             //texture
             if (type.name == EnemyTypeString.ALIEN)
             {
-                enemy.Attach(new Sprite() { texture = SpriteLoader.infantryBtn });
+                enemy.Attach(new Sprite() { texture = SpriteLoader.alienTexture });
             }
             else if (type.name == EnemyTypeString.ROBOT)
             {
-                enemy.Attach(new Sprite() { texture = SpriteLoader.tankBtn });
+                enemy.Attach(new Sprite() { texture = SpriteLoader.robotTexture });
             }
             else if (type.name == EnemyTypeString.BAT)
             {
-                enemy.Attach(new Sprite() { texture = SpriteLoader.planeBtn });
+                enemy.Attach(new Sprite() { texture = SpriteLoader.batTexture });
             }
             else if (type.name == EnemyTypeString.BOMB)
             {
-                enemy.Attach(new Sprite() { texture = SpriteLoader.moneyTowerBtn });
+                enemy.Attach(new Sprite() { texture = SpriteLoader.bombTexture });
             }
 
             //enemy component
-            enemy.Attach(new EnemyComponent());
+            enemy.Attach(new EnemyComponent() { enemyType = type });
 
             return enemy;
         }
