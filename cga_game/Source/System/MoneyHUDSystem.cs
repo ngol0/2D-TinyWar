@@ -15,6 +15,8 @@ namespace Strategy
         Scene scene;
         SpriteFont spriteFont;
 
+        Vector2 offSet = new Vector2(20, 40);
+
         public MoneyHUDSystem(SpriteBatch spriteBatch, SpriteFont font, Scene scene)
         {
             this.spriteBatch = spriteBatch;
@@ -36,9 +38,17 @@ namespace Strategy
             spriteBatch.DrawString(spriteFont, text, new Vector2(355, 520), Color.Black);
             spriteBatch.DrawString(spriteFont, text, new Vector2(354, 520), Color.White);
 
-            string infantryMoney = UnitData.infantry.cost.ToString();
-            //spriteBatch.DrawString(spriteFont, infantryMoney, new Vector2(55, 560), Color.Black);
-            spriteBatch.DrawString(spriteFont, infantryMoney, new Vector2(55, 560), Color.Black, 0.0f, new Vector2(0,0), 0.5f, SpriteEffects.None, 0.0f);
+            string firstItemMoney = scene.UnitList[0].cost.ToString();
+            spriteBatch.DrawString(spriteFont, firstItemMoney, scene.StartingButtonPos + offSet + new Vector2(0,0), Color.Black, 0.0f, new Vector2(0,0), 0.5f, SpriteEffects.None, 0.0f);
+
+            string secondItemMoney = scene.UnitList[1].cost.ToString();
+            spriteBatch.DrawString(spriteFont, secondItemMoney, scene.StartingButtonPos + offSet + new Vector2(70, 0), Color.Black, 0.0f, new Vector2(0, 0), 0.5f, SpriteEffects.None, 0.0f);
+
+            string thirdItemMoney = scene.UnitList[2].cost.ToString();
+            spriteBatch.DrawString(spriteFont, thirdItemMoney, scene.StartingButtonPos + offSet + new Vector2(70*2, 0), Color.Black, 0.0f, new Vector2(0, 0), 0.5f, SpriteEffects.None, 0.0f);
+
+            string fourthItemMoney = scene.UnitList[3].cost.ToString();
+            spriteBatch.DrawString(spriteFont, fourthItemMoney, scene.StartingButtonPos + offSet + new Vector2(70*3, 0), Color.Black, 0.0f, new Vector2(0, 0), 0.5f, SpriteEffects.None, 0.0f);
         } 
     }
 }

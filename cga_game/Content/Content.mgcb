@@ -104,7 +104,7 @@
 /processorParam:TextureFormat=Color
 /build:graphic/infantry.png
 
-#begin graphic/infantrybtn_green.png
+#begin graphic/infantrybtn_up.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -114,9 +114,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:graphic/infantrybtn_green.png
+/build:graphic/infantrybtn_up.png
 
-#begin graphic/infantrybtn.png
+#begin graphic/money_up.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -126,7 +126,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:graphic/infantrybtn.png
+/build:graphic/money_up.png
 
 #begin graphic/money.png
 /importer:TextureImporter
@@ -139,30 +139,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:graphic/money.png
-
-#begin graphic/moneybtn.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:graphic/moneybtn.png
-
-#begin graphic/moneytwnbtn.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:graphic/moneytwnbtn.png
 
 #begin graphic/plane_red.png
 /importer:TextureImporter
@@ -188,7 +164,7 @@
 /processorParam:TextureFormat=Color
 /build:graphic/plane.png
 
-#begin graphic/planebtn_red.png
+#begin graphic/planebtn_up.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -198,19 +174,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:graphic/planebtn_red.png
-
-#begin graphic/planebtn.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:graphic/planebtn.png
+/build:graphic/planebtn_up.png
 
 #begin graphic/resource.png
 /importer:TextureImporter
@@ -248,7 +212,7 @@
 /processorParam:TextureFormat=Color
 /build:graphic/tank.png
 
-#begin graphic/tankbtn_blue.png
+#begin graphic/tankbtn_up.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -258,19 +222,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:graphic/tankbtn_blue.png
-
-#begin graphic/tankbtn.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:graphic/tankbtn.png
+/build:graphic/tankbtn_up.png
 
 #begin graphic/tile_0000.png
 /importer:TextureImporter

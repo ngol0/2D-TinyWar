@@ -12,20 +12,16 @@
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/grid.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/infantry_green.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/infantry.png</File>
-    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/infantrybtn_green.png</File>
-    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/infantrybtn.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/infantrybtn_up.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/money_up.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/money.png</File>
-    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/moneybtn.png</File>
-    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/moneytwnbtn.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/plane_red.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/plane.png</File>
-    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/planebtn_red.png</File>
-    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/planebtn.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/planebtn_up.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/resource.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/tank_blue.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/tank.png</File>
-    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/tankbtn_blue.png</File>
-    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/tankbtn.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/tankbtn_up.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/tile_0000.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/tile_0001.png</File>
   </SourceFiles>
@@ -34,10 +30,6 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>graphic/grid_outer.png</File>
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

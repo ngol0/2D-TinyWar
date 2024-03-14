@@ -29,10 +29,10 @@ namespace Strategy
             moneyTowerTexture = Globals.contentManager.Load<Texture2D>("graphic/money");
 
             //buttons
-            infantryBtn = Globals.contentManager.Load<Texture2D>("graphic/infantrybtn_green");
-            tankBtn = Globals.contentManager.Load<Texture2D>("graphic/tankbtn_blue");
-            planeBtn = Globals.contentManager.Load<Texture2D>("graphic/planebtn_red");
-            moneyTowerBtn = Globals.contentManager.Load<Texture2D>("graphic/moneybtn");
+            infantryBtn = Globals.contentManager.Load<Texture2D>("graphic/infantrybtn_up");
+            tankBtn = Globals.contentManager.Load<Texture2D>("graphic/tankbtn_up");
+            planeBtn = Globals.contentManager.Load<Texture2D>("graphic/planebtn_up");
+            moneyTowerBtn = Globals.contentManager.Load<Texture2D>("graphic/money_up");
         }
     }
 }

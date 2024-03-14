@@ -3,7 +3,7 @@
   <SourceFile>D:/Git/2D-TinyWar/cga_game/Content/graphic/tile_0000.png</SourceFile>
   <SourceTime>2023-08-08T10:35:49.9966563+01:00</SourceTime>
   <DestFile>D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/tile_0000.xnb</DestFile>
-  <DestTime>2024-03-13T21:15:45.9757103+00:00</DestTime>
+  <DestTime>2024-03-13T23:29:52.6505818+00:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T12:44:56+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

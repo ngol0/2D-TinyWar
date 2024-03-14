@@ -9,8 +9,8 @@ using System.Collections.Generic;
 
 namespace Strategy
 {
-   class ItemSelectionSystem : EntityProcessingSystem
-   {
+    class ItemSelectionSystem : EntityProcessingSystem
+    {
         private ComponentMapper<UnitButton> unitButtonMapper;
         private ComponentMapper<BoxCollider2D> boxColliderMapper;
         private ComponentMapper<Sprite> spriteMapper;
@@ -33,43 +33,53 @@ namespace Strategy
         {
             var unitButton = unitButtonMapper.Get(entityId);
             var collider = boxColliderMapper.Get(entityId);
-            var sprite = spriteMapper.Get(entityId);   
+            var sprite = spriteMapper.Get(entityId);
 
-            //mouse intersect with sprite
+            //grey the button out if cost is higher than the current money
+            if (scene.CurrentMoneyAmount < unitButton.unitType.cost)
+            {
+                sprite.color = Color.Gray;
+                unitButton.isSelected = false;
+
+                if (unitButton == scene.currentSelectedUnitButton)
+                {
+                    scene.currentSelectedUnitButton = null;
+                }
+                return;
+            }
+
+            //on mouse click
             if (Globals.input.GetMouseBounds(true).Intersects(collider.boundingBox))
             {
                 if (Globals.input.GetIsMouseButtonDown(Input.MouseButton.Left, true))
                 {
-                    //get unit movement grid pos
-                    if (scene.currentSelectedUnitButton != null) 
+                    foreach (var s in unitButtonMapper.Components)
                     {
-                        foreach (var s in spriteMapper.Components)
-                        {
-                            s.color = Color.White;
-                        }
-                        scene.currentSelectedUnitButton.isSelected = false;
+                        if (s!=null) s.isSelected = false;
                     }
 
                     scene.currentSelectedUnitButton = unitButton;
                     scene.currentSelectedUnitButton.isSelected = true;
-                    sprite.color = Color.MediumSeaGreen;
+
                 }
                 //if hover...
                 else
                 {
-                    
+
                 }
             }
             //deselect
             if (Globals.input.GetIsMouseButtonDown(Input.MouseButton.Right, true))
             {
-                sprite.color = Color.White;
-                if (scene.currentSelectedUnitButton != null) 
+                if (scene.currentSelectedUnitButton != null)
                 {
                     scene.currentSelectedUnitButton.isSelected = false;
                     scene.currentSelectedUnitButton = null;
                 }
             }
+
+            if (unitButton.isSelected) { sprite.color = Color.MediumSeaGreen; }
+            else { sprite.color = Color.White; }
         }
     }
 }
