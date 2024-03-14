@@ -8,6 +8,6 @@ namespace Strategy
     class UnitButton
     {
         public bool isSelected;
-        public Unit unitType;
+        public UnitType unitType;
     }
 }

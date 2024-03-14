@@ -7,7 +7,7 @@ namespace Strategy
 {
     class Globals
     {
-        public static InputManager input;
+        public static MouseManager input;
         public static EntityFactory entityFactory;
         public static ContentManager contentManager;
     }

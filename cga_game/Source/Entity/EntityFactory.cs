@@ -5,6 +5,7 @@ using MonoGame.Extended;
 using MonoGame.Extended.Entities;
 using Strategy.Grid;
 using System;
+using System.Threading.Tasks;
 
 namespace Strategy
 {
@@ -28,45 +29,32 @@ namespace Strategy
             return gridItem;
         }
 
-        public Entity CreateInfantryUnit(Transform transform)
+        public Entity CreateUnit(Transform transform, UnitType type)
         {
-            var infantry = world.CreateEntity();
-            infantry.Attach(transform);
-            infantry.Attach(new Sprite() { texture = SpriteLoader.infantryTexture });
-            infantry.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
+            var unit = world.CreateEntity();
+            unit.Attach(transform);
+            unit.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
+            unit.Attach(new UnitComponent() { unitType = type });
 
-            return infantry;
-        }
+            if (type.name == UnitTypeString.INFANTRY)
+            {
+                unit.Attach(new Sprite() { texture = SpriteLoader.infantryTexture });
+            }
+            else if (type.name == UnitTypeString.TANK)
+            {
+                unit.Attach(new Sprite() { texture = SpriteLoader.tankTexture });
+            }
+            else if (type.name == UnitTypeString.PLANE)
+            {
+                unit.Attach(new Sprite() { texture = SpriteLoader.planeTexture });
+            }
+            else if (type.name == UnitTypeString.RESOURCE)
+            {
+                unit.Attach(new Sprite() { texture = SpriteLoader.moneyTowerTexture });
+                unit.Attach(new MoneyGenerator());
+            }
 
-        public Entity CreateTank(Transform transform)
-        {
-            var tank = world.CreateEntity();
-            tank.Attach(transform);
-            tank.Attach(new Sprite() { texture = SpriteLoader.tankTexture });
-            tank.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
-
-            return tank;
-        }
-
-        public Entity CreatePlane(Transform transform)
-        {
-            var plane = world.CreateEntity();
-            plane.Attach(transform);
-            plane.Attach(new Sprite() { texture = SpriteLoader.planeTexture });
-            plane.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
-
-            return plane;
-        }
-
-        public Entity CreateMoneyTower(Transform transform)
-        {
-            var moneyTower = world.CreateEntity();
-            moneyTower.Attach(transform);
-            moneyTower.Attach(new Sprite() { texture = SpriteLoader.moneyTowerTexture });
-            moneyTower.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
-            moneyTower.Attach(new MoneyGenerator());
-
-            return moneyTower;
+            return unit;
         }
 
         public Entity CreateButton(Transform transform, string type)
@@ -94,6 +82,45 @@ namespace Strategy
             }
 
             return button;
+        }
+
+        public Entity CreateEnemySpawner(Transform transform)
+        {
+            var enemySpawner = world.CreateEntity();
+            enemySpawner.Attach(transform);
+            enemySpawner.Attach(new EnemySpawner());
+
+            return enemySpawner;
+        }
+
+        public Entity CreateEnemy(Transform transform, EnemyType type)
+        {
+            var enemy = world.CreateEntity();
+            enemy.Attach(transform);
+            enemy.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
+
+            //texture
+            if (type.name == EnemyTypeString.ALIEN)
+            {
+                enemy.Attach(new Sprite() { texture = SpriteLoader.infantryBtn });
+            }
+            else if (type.name == EnemyTypeString.ROBOT)
+            {
+                enemy.Attach(new Sprite() { texture = SpriteLoader.tankBtn });
+            }
+            else if (type.name == EnemyTypeString.BAT)
+            {
+                enemy.Attach(new Sprite() { texture = SpriteLoader.planeBtn });
+            }
+            else if (type.name == EnemyTypeString.BOMB)
+            {
+                enemy.Attach(new Sprite() { texture = SpriteLoader.moneyTowerBtn });
+            }
+
+            //enemy component
+            enemy.Attach(new EnemyComponent());
+
+            return enemy;
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Strategy
 
         protected override void LoadContent()
         {
-            Globals.input = new InputManager();
+            Globals.input = new MouseManager();
             Globals.contentManager = this.Content;
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Globals.contentManager.Load<SpriteFont>("graphic/gameFont");

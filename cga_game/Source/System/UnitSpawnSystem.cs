@@ -36,26 +36,7 @@ namespace Strategy
 
                     if (scene.IsValidPosGrid(gridPos) && scene.GetGridItem(gridPos).IsWalkable)
                     {
-                        //create entity
-                        if (scene.CurrentSelectedUnitType.name == UnitTypeString.INFANTRY)
-                        {
-                            scene.InitInfantry(gridPos);
-                        }
-
-                        else if (scene.CurrentSelectedUnitType.name == UnitTypeString.TANK)
-                        {
-                            scene.InitTank(gridPos);
-                        }
-
-                        else if (scene.CurrentSelectedUnitType.name == UnitTypeString.PLANE)
-                        {
-                            scene.InitPlane(gridPos);
-                        }
-
-                        else if (scene.CurrentSelectedUnitType.name == UnitTypeString.RESOURCE)
-                        {
-                            scene.InitMoneyTower(gridPos);
-                        }
+                        scene.InitUnit(gridPos);
                         scene.GetGridItem(gridPos).SetPlaceable(false);
                         scene.SpendMoney();
                     }
