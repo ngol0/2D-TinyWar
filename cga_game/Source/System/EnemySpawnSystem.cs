@@ -39,9 +39,14 @@ namespace Strategy
                 var enemyType = EnemyTypeList.enemyTypeList[randomIndex];
 
                 //spawn enemy
-                Globals.entityFactory.CreateEnemy(transform, enemyType);
+                Globals.entityFactory.CreateEnemy(
+                    new Transform() { gridPos = transform.gridPos, worldPos = transform.worldPos, scale = transform.scale }, 
+                    enemyType);
+
+                scene.WaveManager.AddEnemyToLane(transform.gridPos.y);
 
                 enemySpawner.currentTimer = 0;
+                enemySpawner.spawnMaxTime = RandomUtils.Rand(10, 20);
             }
         }
     }

@@ -10,6 +10,7 @@ namespace Strategy
     class MoneyGenerateSystem : EntityUpdateSystem
     {
         Scene scene;
+        private ComponentMapper<MoneyGenerator> moneyGenerator;
 
         public MoneyGenerateSystem(Scene scene) : base(Aspect.All(typeof(MoneyGenerator)))
         {
@@ -18,22 +19,24 @@ namespace Strategy
 
         public override void Initialize(IComponentMapperService mapperService)
         {
-
+            moneyGenerator = mapperService.GetMapper<MoneyGenerator>();
         }
 
         public override void Update(GameTime gameTime)
         {
-            foreach (var entityId in ActiveEntities)
+            foreach (var entityId in ActiveEntities) 
             {
-                var entity = GetEntity(entityId);
-                var money = entity.Get<MoneyGenerator>();
+                var moneyGen = moneyGenerator.Get(entityId);
 
-                money.currentTimer += gameTime.GetElapsedSeconds();
-
-                if (money.currentTimer > money.maxTimer && money != null)
+                if (moneyGen != null) 
                 {
-                    scene.AddMoney(money.amount);
-                    money.currentTimer = 0;
+                    moneyGen.currentTimer += gameTime.GetElapsedSeconds();
+
+                    if (moneyGen.currentTimer > moneyGen.maxTimer)
+                    {
+                        scene.AddMoney(moneyGen.amount);
+                        moneyGen.currentTimer = 0;
+                    }
                 }
             }
         }

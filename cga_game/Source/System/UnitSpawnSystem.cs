@@ -36,7 +36,7 @@ namespace Strategy
 
                     if (scene.IsValidPosGrid(gridPos) && scene.GetGridItem(gridPos).IsWalkable)
                     {
-                        scene.InitUnit(gridPos);
+                        scene.InitCurrentSelectedUnitType(gridPos);
                         scene.GetGridItem(gridPos).SetPlaceable(false);
                         scene.SpendMoney();
                     }

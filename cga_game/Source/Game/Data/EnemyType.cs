@@ -10,14 +10,15 @@ namespace Strategy
         public string name;
         public int health;
         public int damageDealt;
+        public float speed;
     }
 
     class EnemyGameData
     {
-        public static EnemyType alien = new EnemyType() { name = EnemyTypeString.ALIEN, health = 100, damageDealt = 20 };
-        public static EnemyType bat = new EnemyType() { name = EnemyTypeString.BAT, health = 200, damageDealt = 40 };
-        public static EnemyType robot = new EnemyType() { name = EnemyTypeString.ROBOT, health = 70, damageDealt = 50 };
-        public static EnemyType bomb = new EnemyType() { name = EnemyTypeString.BOMB, health = 60, damageDealt = 100 };
+        public static EnemyType alien = new EnemyType() { name = EnemyTypeString.ALIEN, health = 100, damageDealt = 20, speed = 20 };
+        public static EnemyType bat = new EnemyType() { name = EnemyTypeString.BAT, health = 200, damageDealt = 40, speed = 20 };
+        public static EnemyType robot = new EnemyType() { name = EnemyTypeString.ROBOT, health = 70, damageDealt = 50, speed = 20 };
+        public static EnemyType bomb = new EnemyType() { name = EnemyTypeString.BOMB, health = 60, damageDealt = 100, speed = 20 };
     }
 
     class EnemyTypeList

@@ -18,6 +18,9 @@ namespace Strategy
         int gridHeight = 10;
         int cellSize = 50;
 
+        public int GridWidth => gridWidth;
+        public int GridHeight => gridHeight;
+
         Vector2 offSet;
         Vector2 startingButtonPos;
         public Vector2 StartingButtonPos => startingButtonPos;
@@ -27,6 +30,9 @@ namespace Strategy
 
         public UnitType CurrentSelectedUnitType => currentSelectedUnitButton.unitType;
         public int CurrentMoneyAmount => currentMoneyAmount;
+
+        WaveManager waveManager;
+        public WaveManager WaveManager => waveManager;
 
         public Scene() { }
 
@@ -38,9 +44,11 @@ namespace Strategy
             InitLevelGrid();
             InitUnitList();
             InitUnitButtons();
-            InitEnemySpawner();
 
-            currentMoneyAmount = 100;
+            waveManager = new WaveManager(this);
+            waveManager.InitEnemySpawner();
+
+            currentMoneyAmount = 100000;
         }
 
         private void InitUnitList()
@@ -70,23 +78,12 @@ namespace Strategy
             }
         }
 
-        public void InitUnit(GridPosition position)
+        public void InitCurrentSelectedUnitType(GridPosition position)
         {
             Vector2 worldPosition = GetWorldPosition(position) + offSet;
             Globals.entityFactory.CreateUnit(
                 new Transform() { gridPos = position, worldPos = worldPosition, scale = 40 },
                 CurrentSelectedUnitType);
-        }
-
-        public void InitEnemySpawner()
-        {
-            for (int i = 0; i < gridHeight; i++)
-            {
-                GridPosition pos = new GridPosition(gridWidth, i);
-
-                Globals.entityFactory.CreateEnemySpawner(
-                    new Transform() { gridPos = pos, worldPos = GetWorldPosition(pos), scale = 40});
-            }
         }
 
         public void SpendMoney()
