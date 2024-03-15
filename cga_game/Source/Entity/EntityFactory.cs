@@ -122,5 +122,15 @@ namespace Strategy
 
             return enemy;
         }
+
+        public Entity CreateBullet(Transform transform)
+        {
+            var bullet = world.CreateEntity();
+            bullet.Attach(transform);
+            bullet.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
+            bullet.Attach(new Bullet());
+
+            return bullet;
+        }
     }
 }

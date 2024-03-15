@@ -8,12 +8,12 @@ using System.Collections.Generic;
 
 namespace Strategy
 {
-    class WaveManager
+    class EnemyManager
     {
         Scene scene;
         private int[] laneArray;
 
-        public WaveManager(Scene scene)
+        public EnemyManager(Scene scene)
         {
             this.scene = scene;
         }

@@ -31,8 +31,8 @@ namespace Strategy
         public UnitType CurrentSelectedUnitType => currentSelectedUnitButton.unitType;
         public int CurrentMoneyAmount => currentMoneyAmount;
 
-        WaveManager waveManager;
-        public WaveManager WaveManager => waveManager;
+        EnemyManager enemManager;
+        public EnemyManager EnemyManager => enemManager;
 
         public Scene() { }
 
@@ -45,8 +45,8 @@ namespace Strategy
             InitUnitList();
             InitUnitButtons();
 
-            waveManager = new WaveManager(this);
-            waveManager.InitEnemySpawner();
+            enemManager = new EnemyManager(this);
+            enemManager.InitEnemySpawner();
 
             currentMoneyAmount = 100000;
         }
