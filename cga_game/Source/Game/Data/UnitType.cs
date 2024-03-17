@@ -18,8 +18,8 @@ namespace Strategy
     class UnitGameData
     {
         public static UnitType infantry = new UnitType() { name = UnitTypeString.INFANTRY, cost = 50, health = 100, shootTimer = 2.0f, damageDealt = 20 };
-        public static UnitType tank = new UnitType() { name = UnitTypeString.TANK, cost = 80, health = 200, shootTimer = 2.0f, damageDealt = 20 };
-        public static UnitType plane = new UnitType() { name = UnitTypeString.PLANE, cost = 100, health = 70, shootTimer = 1.0f, damageDealt = 50 };
+        public static UnitType tank = new UnitType() { name = UnitTypeString.TANK, cost = 80, health = 200, shootTimer = 3.0f, damageDealt = 20 };
+        public static UnitType plane = new UnitType() { name = UnitTypeString.PLANE, cost = 100, health = 70, shootTimer = 5.0f, damageDealt = 50 };
         public static UnitType tower = new UnitType() { name = UnitTypeString.RESOURCE, cost = 20, health = 60, shootTimer = 0.0f, damageDealt = 0 };
     }
 

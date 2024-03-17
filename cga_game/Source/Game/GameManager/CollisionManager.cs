@@ -1,13 +1,13 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
 using Microsoft.Xna.Framework.Graphics;
-using MonoGame.Extended;
+using Microsoft.Xna.Framework;
 using MonoGame.Extended.Entities;
 using MonoGame.Extended.Entities.Systems;
-using Strategy.Grid;
+using MonoGame.Extended;
 
 namespace Strategy
 {
-    class BulletPool
+    class CollisionManager
     {
 
     }

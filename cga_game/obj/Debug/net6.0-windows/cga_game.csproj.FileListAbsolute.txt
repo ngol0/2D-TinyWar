@@ -213,3 +213,4 @@ D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\bomb.xnb
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\robot1.xnb
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\robot2.xnb
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\robot3.xnb
+D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\bullet.xnb

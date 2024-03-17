@@ -11,6 +11,7 @@
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/bat2.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/bat3.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/bomb.png</File>
+    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/bullet.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/button.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/gameFont.spritefont</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/glow_frame_1.png</File>
@@ -36,6 +37,7 @@
   </SourceFiles>
   <DestFiles>
     <File>graphic/plane.png</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

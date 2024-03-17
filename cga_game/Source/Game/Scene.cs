@@ -2,7 +2,6 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended.Entities;
-using SharpDX.Direct3D9;
 using Strategy.Grid;
 using System.Collections.Generic;
 
@@ -10,29 +9,42 @@ namespace Strategy
 {
     class Scene
     {
-        GridSystem levelGrid;
+        //--Variables--//
+        #region Unit Data
         private List<UnitType> unitList = new List<UnitType>() {};
         public List<UnitType> UnitList => unitList;
+        public UnitButton currentSelectedUnitButton = null;
+        public UnitType CurrentSelectedUnitType => currentSelectedUnitButton.unitType;
+        #endregion
 
+        #region Grid
+        GridSystem levelGrid;
         int gridWidth = 15;
         int gridHeight = 10;
         int cellSize = 50;
 
         public int GridWidth => gridWidth;
         public int GridHeight => gridHeight;
+        #endregion
 
+        #region Position Vectors
         Vector2 offSet;
         Vector2 startingButtonPos;
         public Vector2 StartingButtonPos => startingButtonPos;
+        #endregion
 
-        public UnitButton currentSelectedUnitButton = null;
+        #region GameStats
         private int currentMoneyAmount;
-
-        public UnitType CurrentSelectedUnitType => currentSelectedUnitButton.unitType;
         public int CurrentMoneyAmount => currentMoneyAmount;
+        private int score = 0;
+        public int Score => score;
+        #endregion
 
+        #region Enemy Manager
         EnemyManager enemManager;
         public EnemyManager EnemyManager => enemManager;
+        #endregion
+        //
 
         public Scene() { }
 
@@ -78,10 +90,10 @@ namespace Strategy
             }
         }
 
-        public void InitCurrentSelectedUnitType(GridPosition position)
+        public void InitCurrentSelectedUnit(GridPosition position)
         {
             Vector2 worldPosition = GetWorldPosition(position) + offSet;
-            Globals.entityFactory.CreateUnit(
+            var unit = Globals.entityFactory.CreateUnit(
                 new Transform() { gridPos = position, worldPos = worldPosition, scale = 40 },
                 CurrentSelectedUnitType);
         }

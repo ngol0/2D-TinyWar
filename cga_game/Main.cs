@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Strategy.Input;
 using MonoGame.Extended.Entities;
+using Microsoft.Xna.Framework.Content;
 
 namespace Strategy
 {
@@ -35,9 +36,8 @@ namespace Strategy
         protected override void LoadContent()
         {
             Globals.input = new MouseManager();
-            Globals.contentManager = this.Content;
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            font = Globals.contentManager.Load<SpriteFont>("graphic/gameFont");
+            font = Content.Load<SpriteFont>("graphic/gameFont");
 
             scene = new Scene();
 
@@ -49,11 +49,12 @@ namespace Strategy
                 .AddSystem(new EnemySpawnSystem(scene))
                 .AddSystem(new EnemyMovementSystem())
                 .AddSystem(new UnitShooterSystem(scene))
+                .AddSystem(new BulletMovementSystem())
                 .AddSystem(new RenderSystem(spriteBatch))
-                .AddSystem(new MoneyHUDSystem(spriteBatch, font, scene))
+                .AddSystem(new GameHUDSystem(spriteBatch, font, scene))
                 .Build();
 
-            SpriteLoader.LoadAllSprite();
+            SpriteLoader.LoadAllSprite(Content);
             Globals.entityFactory = new EntityFactory(world);
 
             scene.Init();

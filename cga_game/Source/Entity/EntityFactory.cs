@@ -23,7 +23,6 @@ namespace Strategy
             var gridItem = world.CreateEntity();
             gridItem.Attach(transform);
             gridItem.Attach(new Sprite() { texture = SpriteLoader.groundTexture });
-            gridItem.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
             gridItem.Attach(new GridItem(transform.gridPos));
             
             return gridItem;
@@ -33,20 +32,24 @@ namespace Strategy
         {
             var unit = world.CreateEntity();
             unit.Attach(transform);
-            unit.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
+            unit.Attach(new BoxCollider2D("unit") { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
             unit.Attach(new UnitComponent() { unitType = type });
+            var unitComp = unit.Get<UnitComponent>();
 
             if (type.name == UnitTypeString.INFANTRY)
             {
                 unit.Attach(new Sprite() { texture = SpriteLoader.infantryTexture });
+                unitComp.bulletSpawnOffset = new Vector2(30, 15);
             }
             else if (type.name == UnitTypeString.TANK)
             {
                 unit.Attach(new Sprite() { texture = SpriteLoader.tankTexture });
+                unitComp.bulletSpawnOffset = new Vector2(30, -5);
             }
             else if (type.name == UnitTypeString.PLANE)
             {
                 unit.Attach(new Sprite() { texture = SpriteLoader.planeTexture });
+                unitComp.bulletSpawnOffset = new Vector2(35, 14);
             }
             else if (type.name == UnitTypeString.RESOURCE)
             {
@@ -97,7 +100,7 @@ namespace Strategy
         {
             var enemy = world.CreateEntity();
             enemy.Attach(transform);
-            enemy.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
+            enemy.Attach(new BoxCollider2D("enemy") { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
 
             //texture
             if (type.name == EnemyTypeString.ALIEN)
@@ -123,12 +126,28 @@ namespace Strategy
             return enemy;
         }
 
-        public Entity CreateBullet(Transform transform)
+        public Entity CreateBullet(Transform transform, UnitType type)
         {
             var bullet = world.CreateEntity();
             bullet.Attach(transform);
-            bullet.Attach(new BoxCollider2D() { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
-            bullet.Attach(new Bullet());
+            bullet.Attach(new BoxCollider2D("bullet") { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
+
+            //texture
+            if (type.name == UnitTypeString.INFANTRY)
+            {
+                bullet.Attach(new Sprite() { texture = SpriteLoader.bulletTexture, color = Color.Aquamarine });
+                bullet.Attach(new Bullet(50.0f));
+            }
+            else if (type.name == UnitTypeString.TANK)
+            {
+                bullet.Attach(new Sprite() { texture = SpriteLoader.bulletTexture, color = Color.DeepSkyBlue });
+                bullet.Attach(new Bullet(50.0f));
+            }
+            else if (type.name == UnitTypeString.PLANE)
+            {
+                bullet.Attach(new Sprite() { texture = SpriteLoader.bulletTexture, color = Color.OrangeRed });
+                bullet.Attach(new Bullet(80.0f));
+            }
 
             return bullet;
         }

@@ -9,6 +9,5 @@ namespace Strategy
     {
         public static MouseManager input;
         public static EntityFactory entityFactory;
-        public static ContentManager contentManager;
     }
 }

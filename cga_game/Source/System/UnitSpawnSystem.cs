@@ -12,7 +12,7 @@ namespace Strategy
         Scene scene;
         float timer;
 
-        public UnitSpawnSystem(Scene scene) : base(Aspect.All(typeof(BoxCollider2D), typeof(GridItem)))
+        public UnitSpawnSystem(Scene scene) : base(Aspect.All(typeof(GridItem)))
         {
             this.scene = scene;
         }
@@ -36,7 +36,7 @@ namespace Strategy
 
                     if (scene.IsValidPosGrid(gridPos) && scene.GetGridItem(gridPos).IsWalkable)
                     {
-                        scene.InitCurrentSelectedUnitType(gridPos);
+                        scene.InitCurrentSelectedUnit(gridPos);
                         scene.GetGridItem(gridPos).SetPlaceable(false);
                         scene.SpendMoney();
                     }
