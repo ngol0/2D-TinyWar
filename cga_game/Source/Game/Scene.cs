@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended.Entities;
 using Strategy.Grid;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Strategy
 {
@@ -45,10 +46,11 @@ namespace Strategy
         public EnemyManager EnemyManager => enemManager;
         #endregion
         //
+        World world;
 
         public Scene() { }
 
-        public void Init()
+        public void Init(World world)
         {
             offSet = new Vector2(5.0f);
             startingButtonPos = new Vector2(50, 520);
@@ -61,6 +63,7 @@ namespace Strategy
             enemManager.InitEnemySpawner();
 
             currentMoneyAmount = 100000;
+            this.world = world;
         }
 
         private void InitUnitList()
@@ -96,6 +99,47 @@ namespace Strategy
             var unit = Globals.entityFactory.CreateUnit(
                 new Transform() { gridPos = position, worldPos = worldPosition, scale = 40 },
                 CurrentSelectedUnitType);
+
+            unit.Get<BoxCollider2D>().OnCollisionEnter += PlayerCollisionResponse;
+        }
+
+        private void PlayerCollisionResponse(int player, int other)
+        {
+            var playerEntity = world.GetEntity(player);
+            var otherEntity = world.GetEntity(other);
+            var tag = otherEntity.Get<BoxCollider2D>().tag;
+            if (tag == "enemy")
+            {
+                world.DestroyEntity(player);
+                //var enem = other.Get<EnemyComponent>();
+                //var playerComp = player.Get<UnitComponent>();
+                //playerComp.unitType.health -= enem.enemyType.damageDealt;
+
+                //if (playerComp.unitType.health <= 0)
+                //{
+                //    world.DestroyEntity(player.Id);
+                //}
+            }
+        }
+
+        public void EnemyCollisionResponse(int enemy, int other)
+        {
+            var enemyEntity = world.GetEntity(enemy);
+            var otherEntity = world.GetEntity(other);
+            var tag = otherEntity.Get<BoxCollider2D>().tag;
+            if (tag == "bullet")
+            {
+                world.DestroyEntity(enemy);
+                world.DestroyEntity(other);
+                //var enem = other.Get<EnemyComponent>();
+                //var playerComp = player.Get<UnitComponent>();
+                //playerComp.unitType.health -= enem.enemyType.damageDealt;
+
+                //if (playerComp.unitType.health <= 0)
+                //{
+                //    world.DestroyEntity(player.Id);
+                //}
+            }
         }
 
         public void SpendMoney()

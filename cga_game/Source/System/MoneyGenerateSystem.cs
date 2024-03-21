@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using MonoGame.Extended.Entities;
 using MonoGame.Extended.Entities.Systems;
 using MonoGame.Extended;
+using System.Diagnostics;
 
 namespace Strategy
 {
@@ -26,6 +27,7 @@ namespace Strategy
         {
             foreach (var entityId in ActiveEntities) 
             {
+                Debug.WriteLine("ehhh");
                 var moneyGen = moneyGenerator.Get(entityId);
 
                 if (moneyGen != null) 

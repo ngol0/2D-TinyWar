@@ -39,11 +39,12 @@ namespace Strategy
                 var enemyType = EnemyTypeList.enemyTypeList[randomIndex];
 
                 //spawn enemy
-                Globals.entityFactory.CreateEnemy(
+                var enemy = Globals.entityFactory.CreateEnemy(
                     new Transform() { gridPos = transform.gridPos, worldPos = transform.worldPos, scale = transform.scale }, 
                     enemyType);
 
                 scene.EnemyManager.AddEnemyToLane(transform.gridPos.y);
+                enemy.Get<BoxCollider2D>().OnCollisionEnter += scene.EnemyCollisionResponse;
 
                 enemySpawner.currentTimer = 0;
                 enemySpawner.spawnMaxTime = RandomUtils.Rand(10, 20);

@@ -33,6 +33,8 @@ namespace Strategy
             var unit = world.CreateEntity();
             unit.Attach(transform);
             unit.Attach(new BoxCollider2D("unit") { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
+            CollisionManager.AddToColliders(unit.Id);
+
             unit.Attach(new UnitComponent() { unitType = type });
             var unitComp = unit.Get<UnitComponent>();
 
@@ -101,6 +103,7 @@ namespace Strategy
             var enemy = world.CreateEntity();
             enemy.Attach(transform);
             enemy.Attach(new BoxCollider2D("enemy") { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
+            CollisionManager.AddToColliders(enemy.Id);
 
             //texture
             if (type.name == EnemyTypeString.ALIEN)
@@ -129,8 +132,9 @@ namespace Strategy
         public Entity CreateBullet(Transform transform, UnitType type)
         {
             var bullet = world.CreateEntity();
-            bullet.Attach(transform);
+            bullet.Attach(transform);;
             bullet.Attach(new BoxCollider2D("bullet") { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
+            CollisionManager.AddToColliders(bullet.Id);
 
             //texture
             if (type.name == UnitTypeString.INFANTRY)

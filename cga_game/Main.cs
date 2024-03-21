@@ -50,6 +50,7 @@ namespace Strategy
                 .AddSystem(new EnemyMovementSystem())
                 .AddSystem(new UnitShooterSystem(scene))
                 .AddSystem(new BulletMovementSystem())
+                .AddSystem(new CollisionManagerSystem())
                 .AddSystem(new RenderSystem(spriteBatch))
                 .AddSystem(new GameHUDSystem(spriteBatch, font, scene))
                 .Build();
@@ -57,7 +58,7 @@ namespace Strategy
             SpriteLoader.LoadAllSprite(Content);
             Globals.entityFactory = new EntityFactory(world);
 
-            scene.Init();
+            scene.Init(world);
         }
 
         protected override void Update(GameTime gameTime)
