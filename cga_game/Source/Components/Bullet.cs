@@ -10,6 +10,7 @@ namespace Strategy
     class Bullet
     {
         public float speed;
+        public int damageDealt;
         public Bullet() { speed = 10.0f; }
         public Bullet(float speed)
         { this.speed = speed; }

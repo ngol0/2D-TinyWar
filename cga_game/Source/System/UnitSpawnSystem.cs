@@ -24,7 +24,7 @@ namespace Strategy
 
         public override void Process(GameTime gameTime, int entityId)
         {
-            if (timer > 20)
+            if (timer > 10)
             {
                 if (Globals.input.GetIsMouseButtonDown(Input.MouseButton.Left, true))
                 {

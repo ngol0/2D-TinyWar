@@ -12,14 +12,10 @@ namespace Strategy
 {
     class CollisionManager
     {
-        //public static List<int> Colliders = new List<int>();
-
-
         public static Dictionary<int, Transform> Colliders = new Dictionary<int, Transform>();
 
         //event
         public static System.Action OnBulletCollision;
-        public static System.Action<int> OnUnitCollision;
 
         public static void AddToColliders(int id, Transform transform) 
         {
@@ -34,16 +30,8 @@ namespace Strategy
 
     public struct IntPair
     {
-        //public int First { get; }
-        //public int Second { get; }
         public Transform FirstCol;
         public Transform SecondCol;
-
-        //public IntPair(int first, int second)
-        //{
-        //    First = first;
-        //    Second = second;
-        //}
 
         public IntPair(Transform first, Transform second)
         {

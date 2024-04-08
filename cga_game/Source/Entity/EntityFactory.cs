@@ -140,17 +140,17 @@ namespace Strategy
             if (type.name == UnitTypeString.INFANTRY)
             {
                 bullet.Attach(new Sprite() { texture = SpriteLoader.bulletTexture, color = Color.Aquamarine });
-                bullet.Attach(new Bullet(50.0f));
+                bullet.Attach(new Bullet(50.0f) { damageDealt = type.damageDealt });
             }
             else if (type.name == UnitTypeString.TANK)
             {
                 bullet.Attach(new Sprite() { texture = SpriteLoader.bulletTexture, color = Color.DeepSkyBlue });
-                bullet.Attach(new Bullet(50.0f));
+                bullet.Attach(new Bullet(50.0f) { damageDealt = type.damageDealt });
             }
             else if (type.name == UnitTypeString.PLANE)
             {
                 bullet.Attach(new Sprite() { texture = SpriteLoader.bulletTexture, color = Color.OrangeRed });
-                bullet.Attach(new Bullet(80.0f));
+                bullet.Attach(new Bullet(80.0f) { damageDealt = type.damageDealt });
             }
 
             return bullet;

@@ -65,7 +65,11 @@ namespace Strategy
                         //on collision exit
                         else
                         {
-                            if (otherCollider.Value.tag == "unit") enemy.isAttacking = false;
+                            if (otherCollider.Value.tag == "unit")
+                            {
+                                enemy.isAttacking = false;
+                                enemy.currentlyAttackedUnit = null;
+                            }
                         }
                         collisionMap[key] = currentStatus;
                     }
@@ -77,17 +81,21 @@ namespace Strategy
                         {
                             enemy.isAttacking = true;
 
-                            Entity currUnit = GetEntity(otherCollider.Key);
-                            var unitComp = currUnit.Get<UnitComponent>();
-                            unitComp.currentHealth -= enemy.enemyType.damageDealt;
+                            if (enemy.currentlyAttackedUnit == null)
+                            {
+                                Entity currUnit = GetEntity(otherCollider.Key);
+                                var unitComp = currUnit.Get<UnitComponent>();
+                                enemy.currentlyAttackedUnit = unitComp;
+                            }
+                            enemy.currentlyAttackedUnit.currentHealth -= enemy.enemyType.damageDealt;
 
                             enemy.attackTimer = 0.0f;
 
                             //if unit dies
-                            if (unitComp.currentHealth <= 0)
+                            if (enemy.currentlyAttackedUnit.currentHealth <= 0)
                             {
                                 DestroyEntity(otherCollider.Key);
-                                otherCollider.Value.worldPos = new Vector2(10000, 10000); //cheat code to remove unit
+                                otherCollider.Value.worldPos = new Vector2(10000, 10000); //cheat code to remove unit key
                                 enemy.isAttacking = false;
                                 enemy.attackTimer = enemy.enemyType.speedDealt;
                             }

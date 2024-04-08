@@ -66,7 +66,6 @@ namespace Strategy
             this.world = world;
 
             CollisionManager.OnBulletCollision += OnScore;
-            CollisionManager.OnUnitCollision += UnitCollisionResponse;
         }
 
         private void InitUnitList()
@@ -102,19 +101,6 @@ namespace Strategy
             var unit = Globals.entityFactory.CreateUnit(
                 new Transform() { gridPos = position, worldPos = worldPosition, scale = 40, tag = "unit" },
                 CurrentSelectedUnitType);
-        }
-
-        private void UnitCollisionResponse(int unit)
-        {
-            Entity currUnit = world.GetEntity(unit);
-            var unitComp = currUnit.Get<UnitComponent>();
-            unitComp.currentHealth -= 20;
-
-            if (unitComp.currentHealth <= 0) 
-            {
-                world.DestroyEntity(unit);
-                CollisionManager.Colliders.Remove(unit);
-            }
         }
 
         public void SpendMoney()
