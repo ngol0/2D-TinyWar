@@ -13,7 +13,6 @@ namespace Strategy
         Scene scene;
         private ComponentMapper<UnitComponent> unitCompMapper;
         private ComponentMapper<Transform> transformMapper;
-        //private ComponentMapper<Sprite> spriteMapper;
 
         public UnitShooterSystem(Scene scene) : base(Aspect.All(typeof(UnitComponent), typeof(Transform), typeof(Sprite)).Exclude(typeof(MoneyGenerator)))
         {
@@ -23,14 +22,12 @@ namespace Strategy
         {
             unitCompMapper = mapperService.GetMapper<UnitComponent>();
             transformMapper = mapperService.GetMapper<Transform>();
-            //spriteMapper = mapperService.GetMapper<Sprite>();
         }
 
         public override void Process(GameTime gameTime, int entityId)
         {
             var transform = transformMapper.Get(entityId);
             var unit = unitCompMapper.Get(entityId);
-            //var sprite = spriteMapper.Get(entityId);
 
             unit.currentTimer += gameTime.GetElapsedSeconds();
 
@@ -40,7 +37,7 @@ namespace Strategy
                 Vector2 bulletPos = transform.worldPos + unit.bulletSpawnOffset;
                 //init bullet
                 Globals.entityFactory.CreateBullet(
-                    new Transform() { gridPos = scene.GetGridPosition(bulletPos), worldPos = bulletPos, scale = 10 },
+                    new Transform() { gridPos = scene.GetGridPosition(bulletPos), worldPos = bulletPos, scale = 10, tag = "bullet" },
                     unit.unitType);
 
                 unit.currentTimer = 0;

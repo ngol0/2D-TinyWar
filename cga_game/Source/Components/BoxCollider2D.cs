@@ -8,7 +8,6 @@ namespace Strategy
     class BoxCollider2D
     {
         public Rectangle boundingBox;
-        public Action<int, int> OnCollisionEnter;
 
         public string tag;
 

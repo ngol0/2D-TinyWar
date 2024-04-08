@@ -20,8 +20,8 @@ namespace Strategy
 
         #region Grid
         GridSystem levelGrid;
-        int gridWidth = 15;
-        int gridHeight = 10;
+        int gridWidth = 12;
+        int gridHeight = 6;
         int cellSize = 50;
 
         public int GridWidth => gridWidth;
@@ -64,6 +64,9 @@ namespace Strategy
 
             currentMoneyAmount = 100000;
             this.world = world;
+
+            CollisionManager.OnBulletCollision += OnScore;
+            CollisionManager.OnUnitCollision += UnitCollisionResponse;
         }
 
         private void InitUnitList()
@@ -97,48 +100,20 @@ namespace Strategy
         {
             Vector2 worldPosition = GetWorldPosition(position) + offSet;
             var unit = Globals.entityFactory.CreateUnit(
-                new Transform() { gridPos = position, worldPos = worldPosition, scale = 40 },
+                new Transform() { gridPos = position, worldPos = worldPosition, scale = 40, tag = "unit" },
                 CurrentSelectedUnitType);
-
-            unit.Get<BoxCollider2D>().OnCollisionEnter += PlayerCollisionResponse;
         }
 
-        private void PlayerCollisionResponse(int player, int other)
+        private void UnitCollisionResponse(int unit)
         {
-            var playerEntity = world.GetEntity(player);
-            var otherEntity = world.GetEntity(other);
-            var tag = otherEntity.Get<BoxCollider2D>().tag;
-            if (tag == "enemy")
+            Entity currUnit = world.GetEntity(unit);
+            var unitComp = currUnit.Get<UnitComponent>();
+            unitComp.currentHealth -= 20;
+
+            if (unitComp.currentHealth <= 0) 
             {
-                world.DestroyEntity(player);
-                //var enem = other.Get<EnemyComponent>();
-                //var playerComp = player.Get<UnitComponent>();
-                //playerComp.unitType.health -= enem.enemyType.damageDealt;
-
-                //if (playerComp.unitType.health <= 0)
-                //{
-                //    world.DestroyEntity(player.Id);
-                //}
-            }
-        }
-
-        public void EnemyCollisionResponse(int enemy, int other)
-        {
-            var enemyEntity = world.GetEntity(enemy);
-            var otherEntity = world.GetEntity(other);
-            var tag = otherEntity.Get<BoxCollider2D>().tag;
-            if (tag == "bullet")
-            {
-                world.DestroyEntity(enemy);
-                world.DestroyEntity(other);
-                //var enem = other.Get<EnemyComponent>();
-                //var playerComp = player.Get<UnitComponent>();
-                //playerComp.unitType.health -= enem.enemyType.damageDealt;
-
-                //if (playerComp.unitType.health <= 0)
-                //{
-                //    world.DestroyEntity(player.Id);
-                //}
+                world.DestroyEntity(unit);
+                CollisionManager.Colliders.Remove(unit);
             }
         }
 
@@ -150,6 +125,11 @@ namespace Strategy
         public void AddMoney(int amount)
         {
             currentMoneyAmount += amount;
+        }
+
+        public void OnScore()
+        {
+            score += 10;
         }
 
         public GridPosition GetGridPosition(Vector2 worldPos) => levelGrid.GetGridPosition(worldPos);

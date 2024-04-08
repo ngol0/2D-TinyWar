@@ -27,7 +27,7 @@ namespace Strategy
             var enemy = enemyComponentMapper.Get(entityId);
             var transform = transformMapper.Get(entityId);
 
-            transform.worldPos.X -= gameTime.GetElapsedSeconds() * enemy.enemyType.speed;
+            if (!enemy.isAttacking) transform.worldPos.X -= gameTime.GetElapsedSeconds() * enemy.enemyType.speed;
         }
     }
 }

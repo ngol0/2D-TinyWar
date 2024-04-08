@@ -10,5 +10,10 @@ namespace Strategy
     class EnemyComponent
     {
         public EnemyType enemyType;
+        public int currentHealth;
+        public bool isAttacking = false;
+
+        public UnitComponent currentlyAttackedUnit;
+        public float attackTimer = 200.0f;
     }
 }

@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Strategy.Grid
 {
-    class GridPosition
+    public class GridPosition
     {
         public int x;
         public int y;

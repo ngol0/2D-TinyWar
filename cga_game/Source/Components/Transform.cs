@@ -6,13 +6,12 @@ using System;
 
 namespace Strategy
 {
-    class Transform
+    public class Transform
     {
         public Vector2 worldPos;
         public GridPosition gridPos;
         public int scale;
 
-        //public string tag;
-        //public Action<int, int> OnCollisionEnter;
+        public string tag;
     }
 }

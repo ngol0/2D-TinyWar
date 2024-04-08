@@ -32,10 +32,9 @@ namespace Strategy
         {
             var unit = world.CreateEntity();
             unit.Attach(transform);
-            unit.Attach(new BoxCollider2D("unit") { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
-            CollisionManager.AddToColliders(unit.Id);
+            //unit.Attach(new BoxCollider2D("unit") { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
 
-            unit.Attach(new UnitComponent() { unitType = type });
+            unit.Attach(new UnitComponent() { unitType = type, currentHealth = type.health });
             var unitComp = unit.Get<UnitComponent>();
 
             if (type.name == UnitTypeString.INFANTRY)
@@ -58,6 +57,8 @@ namespace Strategy
                 unit.Attach(new Sprite() { texture = SpriteLoader.moneyTowerTexture });
                 unit.Attach(new MoneyGenerator());
             }
+
+            CollisionManager.AddToColliders(unit.Id, transform);
 
             return unit;
         }
@@ -102,8 +103,7 @@ namespace Strategy
         {
             var enemy = world.CreateEntity();
             enemy.Attach(transform);
-            enemy.Attach(new BoxCollider2D("enemy") { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
-            CollisionManager.AddToColliders(enemy.Id);
+            //enemy.Attach(new BoxCollider2D("enemy") { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
 
             //texture
             if (type.name == EnemyTypeString.ALIEN)
@@ -124,7 +124,7 @@ namespace Strategy
             }
 
             //enemy component
-            enemy.Attach(new EnemyComponent() { enemyType = type });
+            enemy.Attach(new EnemyComponent() { enemyType = type, currentHealth = type.health });
 
             return enemy;
         }
@@ -133,8 +133,8 @@ namespace Strategy
         {
             var bullet = world.CreateEntity();
             bullet.Attach(transform);;
-            bullet.Attach(new BoxCollider2D("bullet") { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
-            CollisionManager.AddToColliders(bullet.Id);
+            //bullet.Attach(new BoxCollider2D("bullet") { boundingBox = new Rectangle((int)transform.worldPos.X, (int)transform.worldPos.Y, transform.scale, transform.scale) });
+            CollisionManager.AddToColliders(bullet.Id, transform);
 
             //texture
             if (type.name == UnitTypeString.INFANTRY)

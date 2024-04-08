@@ -142,7 +142,6 @@ D:\Git\2DTinyWar\cga_game\obj\Debug\net6.0-windows\cga_game.pdb
 D:\Git\2DTinyWar\cga_game\obj\Debug\net6.0-windows\cga_game.genruntimeconfig.cache
 D:\Git\2DTinyWar\cga_game\obj\Debug\net6.0-windows\ref\cga_game.dll
 D:\Git\2DTinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\button.xnb
-D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\cga_game.dll
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\alien1.xnb
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\alien2.xnb
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\bat1.xnb
@@ -177,6 +176,7 @@ D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\tile_0124.xn
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\cga_game.exe
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\cga_game.deps.json
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\cga_game.runtimeconfig.json
+D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\cga_game.dll
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\cga_game.pdb
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.dll
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.CSharp.dll

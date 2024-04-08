@@ -50,7 +50,7 @@ namespace Strategy
                 .AddSystem(new EnemyMovementSystem())
                 .AddSystem(new UnitShooterSystem(scene))
                 .AddSystem(new BulletMovementSystem())
-                .AddSystem(new CollisionManagerSystem())
+                .AddSystem(new EnemyCollisionSystem())
                 .AddSystem(new RenderSystem(spriteBatch))
                 .AddSystem(new GameHUDSystem(spriteBatch, font, scene))
                 .Build();
