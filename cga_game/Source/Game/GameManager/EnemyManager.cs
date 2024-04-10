@@ -12,6 +12,7 @@ namespace Strategy
     {
         Scene scene;
         private int[] laneArray;
+        public static int NUMBER_OF_ENEMIES = 20;
 
         public EnemyManager(Scene scene)
         {

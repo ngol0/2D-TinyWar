@@ -16,8 +16,11 @@ namespace Strategy
         private ComponentMapper<EnemyComponent> enemyMapper;
         Dictionary<IntPair, bool> collisionMap = new Dictionary<IntPair, bool>();
 
-        public EnemyCollisionSystem() : base(Aspect.All(typeof(EnemyComponent)))
+        Scene scene;
+
+        public EnemyCollisionSystem(Scene scene) : base(Aspect.All(typeof(EnemyComponent)))
         {
+            this.scene = scene;
         }
 
         public override void Initialize(IComponentMapperService mapperService)
@@ -54,7 +57,7 @@ namespace Strategy
                                 {
                                     DestroyEntity(entityId);
                                     //add score
-                                    CollisionManager.OnBulletCollision?.Invoke();
+                                    CollisionManager.OnEnemyDie?.Invoke();
                                 }
 
                                 //destroy bullet
@@ -98,6 +101,9 @@ namespace Strategy
                                 otherCollider.Value.worldPos = new Vector2(10000, 10000); //cheat code to remove unit key
                                 enemy.isAttacking = false;
                                 enemy.attackTimer = enemy.enemyType.speedDealt;
+
+                                var unitPos = otherCollider.Value.gridPos;
+                                scene.GetGridItem(unitPos).SetPlaceable(true);
                             }
                         }
                     }

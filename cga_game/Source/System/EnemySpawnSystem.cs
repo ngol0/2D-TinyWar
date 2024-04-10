@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using MonoGame.Extended.Entities;
 using MonoGame.Extended.Entities.Systems;
 using MonoGame.Extended;
+using System.Collections.Generic;
 
 namespace Strategy
 {
@@ -13,7 +14,9 @@ namespace Strategy
 
         private ComponentMapper<EnemySpawner> enemySpawnerMapper;
         private ComponentMapper<Transform> transformMapper;
-        int count = 0;
+        private List<int> enemies = new List<int>();
+
+        float startingTimer = 0.0f;
 
         public EnemySpawnSystem(Scene scene) : base(Aspect.All(typeof(EnemySpawner), typeof(Transform)))
         {
@@ -24,6 +27,8 @@ namespace Strategy
         {
             enemySpawnerMapper = mapperService.GetMapper<EnemySpawner>();
             transformMapper = mapperService.GetMapper<Transform>();
+
+            scene.OnRestart += Restart;
         }
 
         public override void Process(GameTime gameTime, int entityId)
@@ -32,8 +37,9 @@ namespace Strategy
             var transform = transformMapper.Get(entityId);
 
             enemySpawner.currentTimer += gameTime.GetElapsedSeconds();
+            startingTimer += gameTime.GetElapsedSeconds();
 
-            if (enemySpawner.currentTimer > enemySpawner.spawnMaxTime && count <= 20)
+            if (enemySpawner.currentTimer > enemySpawner.spawnMaxTime && enemies.Count <= EnemyManager.NUMBER_OF_ENEMIES && startingTimer >= 5.0f)
             {
                 //get a random enemy from enemy data list
                 int randomIndex = RandomUtils.Rand(0, EnemyTypeList.enemyTypeList.Count);
@@ -44,13 +50,23 @@ namespace Strategy
                     new Transform() { gridPos = transform.gridPos, worldPos = transform.worldPos, scale = transform.scale }, 
                     enemyType);
 
-                count++;
+                enemies.Add(enemy.Id);
 
                 scene.EnemyManager.AddEnemyToLane(transform.gridPos.y);
 
                 enemySpawner.currentTimer = 0;
                 enemySpawner.spawnMaxTime = RandomUtils.Rand(10, 20);
             }
+        }
+
+        public void Restart()
+        { 
+            foreach (var enemy in enemies) 
+            {
+                DestroyEntity(enemy);
+            }
+            enemies.Clear();
+            startingTimer = 0.0f;
         }
     }
 }

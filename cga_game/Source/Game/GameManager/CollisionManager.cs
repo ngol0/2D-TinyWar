@@ -15,7 +15,7 @@ namespace Strategy
         public static Dictionary<int, Transform> Colliders = new Dictionary<int, Transform>();
 
         //event
-        public static System.Action OnBulletCollision;
+        public static System.Action OnEnemyDie;
 
         public static void AddToColliders(int id, Transform transform) 
         {

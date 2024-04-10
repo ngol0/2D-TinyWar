@@ -28,6 +28,12 @@ namespace Strategy
             var transform = transformMapper.Get(entityId);
 
             if (!enemy.isAttacking) transform.worldPos.X -= gameTime.GetElapsedSeconds() * enemy.enemyType.speed;
+
+            //lost condition
+            if (transform.worldPos.X < -5) //lose
+            {
+                Globals.windowManager.SetWindow(Globals.gameOverWindow);
+            }
         }
     }
 }

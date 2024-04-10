@@ -4,6 +4,7 @@ using MonoGame.Extended;
 using MonoGame.Extended.Entities;
 using MonoGame.Extended.Entities.Systems;
 using Strategy.Grid;
+using System.Collections.Generic;
 
 namespace Strategy
 {
@@ -12,6 +13,8 @@ namespace Strategy
         Scene scene;
         float timer;
 
+        List<int> units = new List<int>();
+
         public UnitSpawnSystem(Scene scene) : base(Aspect.All(typeof(GridItem)))
         {
             this.scene = scene;
@@ -19,7 +22,7 @@ namespace Strategy
 
         public override void Initialize(IComponentMapperService mapperService)
         {
-
+            scene.OnRestart += Restart;
         }
 
         public override void Process(GameTime gameTime, int entityId)
@@ -36,9 +39,11 @@ namespace Strategy
 
                     if (scene.IsValidPosGrid(gridPos) && scene.GetGridItem(gridPos).IsWalkable)
                     {
-                        scene.InitCurrentSelectedUnit(gridPos);
+                        var unitId = scene.InitCurrentSelectedUnit(gridPos);
                         scene.GetGridItem(gridPos).SetPlaceable(false);
                         scene.SpendMoney();
+
+                        units.Add(unitId);
                     }
 
                     timer = 0;
@@ -49,6 +54,17 @@ namespace Strategy
             {
                 timer += gameTime.GetElapsedSeconds();
             }
+        }
+
+        public void Restart()
+        {
+            foreach (var unit in units)
+            {
+                var unitPos = GetEntity(unit).Get<Transform>();
+                scene.GetGridItem(unitPos.gridPos).SetPlaceable(true);
+                DestroyEntity(unit);
+            }
+            units.Clear();
         }
     }
 }

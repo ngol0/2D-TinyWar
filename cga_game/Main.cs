@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using Strategy.Input;
 using MonoGame.Extended.Entities;
 using Microsoft.Xna.Framework.Content;
+using Strategy.UI;
 
 namespace Strategy
 {
@@ -26,8 +27,8 @@ namespace Strategy
         {
             // TODO: Add your initialization logic here
             graphic.IsFullScreen = false;
-            graphic.PreferredBackBufferWidth = 960;
-            graphic.PreferredBackBufferHeight = 720;
+            graphic.PreferredBackBufferWidth = 720;
+            graphic.PreferredBackBufferHeight = 560;
             graphic.ApplyChanges();
 
             base.Initialize();
@@ -39,8 +40,9 @@ namespace Strategy
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("graphic/gameFont");
 
-            scene = new Scene();
+            Globals.windowManager = new WindowManager();
 
+            scene = new Scene();
             world = new WorldBuilder()
                 .AddSystem(new MoneyGenerateSystem(scene))
                 .AddSystem(new UnitSpawnSystem(scene))
@@ -50,14 +52,15 @@ namespace Strategy
                 .AddSystem(new EnemyMovementSystem())
                 .AddSystem(new UnitShooterSystem(scene))
                 .AddSystem(new BulletMovementSystem())
-                .AddSystem(new EnemyCollisionSystem())
-                .AddSystem(new RenderSystem(spriteBatch))
+                .AddSystem(new EnemyCollisionSystem(scene))
+                .AddSystem(new SceneRenderSystem(spriteBatch))
                 .AddSystem(new GameHUDSystem(spriteBatch, font, scene))
                 .Build();
 
             SpriteLoader.LoadAllSprite(Content);
             Globals.entityFactory = new EntityFactory(world);
 
+            Globals.windowManager.Init(scene);
             scene.Init(world);
         }
 
@@ -67,16 +70,31 @@ namespace Strategy
                 Exit();
 
             // Update logic here
+            //UI
+            Globals.windowManager.Update(gameTime);
+            if (!Globals.windowManager.GetCurrentWindow().IsInGame()) return;
+
+            //in game input
             Globals.input.Update(gameTime);
+
+            //in game update
             world.Update(gameTime);
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.DarkSlateGray);
 
             spriteBatch.Begin();
+            Globals.windowManager.Render(spriteBatch, font);
+            spriteBatch.End();
+
+            //ui
+            if (!Globals.windowManager.GetCurrentWindow().IsInGame()) return;
+
+            spriteBatch.Begin();
+            //in game render
             world.Draw(gameTime);
             spriteBatch.End();
 

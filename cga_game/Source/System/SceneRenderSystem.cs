@@ -7,13 +7,13 @@ using Strategy.Grid;
 
 namespace Strategy
 {
-    class RenderSystem : EntityDrawSystem
+    class SceneRenderSystem : EntityDrawSystem
     {
         SpriteBatch spriteBatch;
         private ComponentMapper<Transform> transformMapper;
         private ComponentMapper<Sprite> spriteMapper;
 
-        public RenderSystem(SpriteBatch spriteBatch) : base(Aspect.All(typeof(Sprite), typeof(Transform)).Exclude(typeof(GridItem)))
+        public SceneRenderSystem(SpriteBatch spriteBatch) : base(Aspect.All(typeof(Sprite), typeof(Transform)).Exclude(typeof(GridItem)))
         {
             this.spriteBatch = spriteBatch;
         }

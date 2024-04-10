@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended.Entities;
 using Strategy.Grid;
+using Strategy.UI;
 using System.Collections.Generic;
 using System.Diagnostics;
 
@@ -36,6 +37,7 @@ namespace Strategy
 
         #region GameStats
         private int currentMoneyAmount;
+        private int originalMoney;
         public int CurrentMoneyAmount => currentMoneyAmount;
         private int score = 0;
         public int Score => score;
@@ -43,17 +45,20 @@ namespace Strategy
 
         #region Enemy Manager
         EnemyManager enemManager;
+        int enemyKilledCount;
         public EnemyManager EnemyManager => enemManager;
         #endregion
         //
         World world;
+
+        public System.Action OnRestart;
 
         public Scene() { }
 
         public void Init(World world)
         {
             offSet = new Vector2(5.0f);
-            startingButtonPos = new Vector2(50, 520);
+            startingButtonPos = new Vector2(50, 330);
 
             InitLevelGrid();
             InitUnitList();
@@ -62,10 +67,11 @@ namespace Strategy
             enemManager = new EnemyManager(this);
             enemManager.InitEnemySpawner();
 
-            currentMoneyAmount = 100000;
+            originalMoney = 10000;
+            currentMoneyAmount = originalMoney;
             this.world = world;
 
-            CollisionManager.OnBulletCollision += OnScore;
+            CollisionManager.OnEnemyDie += OnScore;
         }
 
         private void InitUnitList()
@@ -95,12 +101,14 @@ namespace Strategy
             }
         }
 
-        public void InitCurrentSelectedUnit(GridPosition position)
+        public int InitCurrentSelectedUnit(GridPosition position)
         {
             Vector2 worldPosition = GetWorldPosition(position) + offSet;
             var unit = Globals.entityFactory.CreateUnit(
                 new Transform() { gridPos = position, worldPos = worldPosition, scale = 40, tag = "unit" },
                 CurrentSelectedUnitType);
+
+            return unit.Id;
         }
 
         public void SpendMoney()
@@ -116,6 +124,22 @@ namespace Strategy
         public void OnScore()
         {
             score += 10;
+            enemyKilledCount++; 
+
+            if (enemyKilledCount == EnemyManager.NUMBER_OF_ENEMIES)
+            {
+                //victory
+                Globals.windowManager.SetWindow(Globals.victoryWindow);
+            }
+        }
+
+        public void Restart()
+        {
+            score = 0;
+            enemyKilledCount = 0;
+            currentMoneyAmount = originalMoney;
+
+            OnRestart?.Invoke();
         }
 
         public GridPosition GetGridPosition(Vector2 worldPos) => levelGrid.GetGridPosition(worldPos);

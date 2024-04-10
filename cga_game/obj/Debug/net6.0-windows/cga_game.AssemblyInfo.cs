@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("cga_game")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e689a42da9a9385c5ae22845e4de63ae665340bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("cga_game")]
 [assembly: System.Reflection.AssemblyTitleAttribute("cga_game")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
