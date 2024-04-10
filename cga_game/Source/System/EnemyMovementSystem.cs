@@ -12,14 +12,19 @@ namespace Strategy
         private ComponentMapper<EnemyComponent> enemyComponentMapper;
         private ComponentMapper<Transform> transformMapper;
 
-        public EnemyMovementSystem() : base(Aspect.All(typeof(EnemyComponent), typeof(Transform)))
+        Scene scene;
+
+        public EnemyMovementSystem(Scene scene) : base(Aspect.All(typeof(EnemyComponent), typeof(Transform)))
         {
+            this.scene = scene;
         }
 
         public override void Initialize(IComponentMapperService mapperService)
         {
             enemyComponentMapper = mapperService.GetMapper<EnemyComponent>();
             transformMapper = mapperService.GetMapper<Transform>();
+
+            scene.OnRestart += Restart;
         }
 
         public override void Process(GameTime gameTime, int entityId)
@@ -33,6 +38,14 @@ namespace Strategy
             if (transform.worldPos.X < -5) //lose
             {
                 Globals.windowManager.SetWindow(Globals.gameOverWindow);
+            }
+        }
+
+        public void Restart()
+        {
+            foreach (var id in ActiveEntities)
+            {
+                DestroyEntity(id);
             }
         }
     }

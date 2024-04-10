@@ -14,7 +14,7 @@ namespace Strategy
 
         private ComponentMapper<EnemySpawner> enemySpawnerMapper;
         private ComponentMapper<Transform> transformMapper;
-        private List<int> enemies = new List<int>();
+        int count = 0;
 
         float startingTimer = 0.0f;
 
@@ -39,7 +39,7 @@ namespace Strategy
             enemySpawner.currentTimer += gameTime.GetElapsedSeconds();
             startingTimer += gameTime.GetElapsedSeconds();
 
-            if (enemySpawner.currentTimer > enemySpawner.spawnMaxTime && enemies.Count <= EnemyManager.NUMBER_OF_ENEMIES && startingTimer >= 5.0f)
+            if (enemySpawner.currentTimer > enemySpawner.spawnMaxTime && count <= EnemyManager.NUMBER_OF_ENEMIES && startingTimer >= 5.0f)
             {
                 //get a random enemy from enemy data list
                 int randomIndex = RandomUtils.Rand(0, EnemyTypeList.enemyTypeList.Count);
@@ -47,10 +47,8 @@ namespace Strategy
 
                 //spawn enemy
                 var enemy = Globals.entityFactory.CreateEnemy(
-                    new Transform() { gridPos = transform.gridPos, worldPos = transform.worldPos, scale = transform.scale }, 
+                    new Transform() { gridPos = transform.gridPos, worldPos = transform.worldPos, scale = transform.scale },
                     enemyType);
-
-                enemies.Add(enemy.Id);
 
                 scene.EnemyManager.AddEnemyToLane(transform.gridPos.y);
 
@@ -59,14 +57,10 @@ namespace Strategy
             }
         }
 
-        public void Restart()
-        { 
-            foreach (var enemy in enemies) 
-            {
-                DestroyEntity(enemy);
-            }
-            enemies.Clear();
-            startingTimer = 0.0f;
+        private void Restart()
+        {
+            startingTimer = 0;
+            count = 0;
         }
     }
 }

@@ -56,7 +56,8 @@ namespace Strategy.UI
         private void InitKeyboardBinding()
         {
             keyboardManager.AddKeyboardBinding(Keys.S, Globals.startWindow.StartGame);
-            //keyboardManager.AddKeyboardBinding(Keys.P, Globals.inGameWindow.PauseGame);
+            keyboardManager.AddKeyboardBinding(Keys.P, Globals.inGameWindow.PauseGame);
+            keyboardManager.AddKeyboardBinding(Keys.L, Globals.pauseWindow.Continue);
             keyboardManager.AddKeyboardBinding(Keys.R, Restart);
         }
 
@@ -67,7 +68,6 @@ namespace Strategy.UI
                 //restart enemy/units/etc.
                 scene.Restart();
                 if (currentWindow!=Globals.inGameWindow) SetWindow(Globals.inGameWindow);
-
             }
         }
 

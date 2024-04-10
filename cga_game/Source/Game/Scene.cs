@@ -70,8 +70,6 @@ namespace Strategy
             originalMoney = 10000;
             currentMoneyAmount = originalMoney;
             this.world = world;
-
-            CollisionManager.OnEnemyDie += OnScore;
         }
 
         private void InitUnitList()
@@ -138,6 +136,7 @@ namespace Strategy
             score = 0;
             enemyKilledCount = 0;
             currentMoneyAmount = originalMoney;
+            CollisionManager.Colliders.Clear();
 
             OnRestart?.Invoke();
         }

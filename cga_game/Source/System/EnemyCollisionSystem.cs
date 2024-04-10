@@ -57,7 +57,7 @@ namespace Strategy
                                 {
                                     DestroyEntity(entityId);
                                     //add score
-                                    CollisionManager.OnEnemyDie?.Invoke();
+                                    scene.OnScore();
                                 }
 
                                 //destroy bullet

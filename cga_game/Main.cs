@@ -49,12 +49,13 @@ namespace Strategy
                 .AddSystem(new GridRenderSystem(spriteBatch))
                 .AddSystem(new ItemSelectionSystem(scene))
                 .AddSystem(new EnemySpawnSystem(scene))
-                .AddSystem(new EnemyMovementSystem())
+                .AddSystem(new EnemyMovementSystem(scene))
                 .AddSystem(new UnitShooterSystem(scene))
-                .AddSystem(new BulletMovementSystem())
+                .AddSystem(new BulletMovementSystem(scene))
                 .AddSystem(new EnemyCollisionSystem(scene))
                 .AddSystem(new SceneRenderSystem(spriteBatch))
                 .AddSystem(new GameHUDSystem(spriteBatch, font, scene))
+                .AddSystem(new UnitResetSystem(scene))
                 .Build();
 
             SpriteLoader.LoadAllSprite(Content);
