@@ -5,6 +5,7 @@ using MonoGame.Extended;
 using MonoGame.Extended.Entities;
 using Strategy.Grid;
 using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace Strategy
@@ -40,7 +41,7 @@ namespace Strategy
             if (type.name == UnitTypeString.INFANTRY)
             {
                 unit.Attach(new Sprite() { texture = SpriteLoader.infantryTexture });
-                unitComp.bulletSpawnOffset = new Vector2(30, 15);
+                unitComp.bulletSpawnOffset = new Vector2(30, 14);
             }
             else if (type.name == UnitTypeString.TANK)
             {

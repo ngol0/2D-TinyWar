@@ -10,7 +10,7 @@ namespace Strategy
     class UnitComponent
     {
         public UnitType unitType;
-        public float currentTimer;
+        public float currentTimer = 100.0f;
         public Vector2 bulletSpawnOffset;
         public int currentHealth;
     }

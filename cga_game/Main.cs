@@ -5,6 +5,9 @@ using Strategy.Input;
 using MonoGame.Extended.Entities;
 using Microsoft.Xna.Framework.Content;
 using Strategy.UI;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 
 namespace Strategy
 {
@@ -13,6 +16,7 @@ namespace Strategy
         private GraphicsDeviceManager graphic;
         private SpriteBatch spriteBatch;
         private SpriteFont font;
+        
         Scene scene;
         World world;
 

@@ -40,6 +40,7 @@ namespace Strategy
                 IntPair key = new IntPair(transform, otherCollider.Value);
 
                 bool currentStatus = CollisionManager.IsCollided(transform, otherCollider.Value);
+                
                 if (collisionMap.ContainsKey(key))
                 {
                     if (currentStatus != collisionMap[key])
@@ -47,6 +48,7 @@ namespace Strategy
                         //on collision enter
                         if (currentStatus)
                         {
+                            //Debug.WriteLine(currentStatus);
                             //check for collision with bullets
                             if (otherCollider.Value.tag == "bullet")
                             {
@@ -58,6 +60,7 @@ namespace Strategy
                                     DestroyEntity(entityId);
                                     //add score
                                     scene.OnScore();
+                                    scene.EnemyManager.RemoveEnemyFromLane(transform.gridPos.y);
                                 }
 
                                 //destroy bullet

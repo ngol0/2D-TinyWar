@@ -50,6 +50,7 @@ namespace Strategy
         #endregion
         //
         World world;
+        LevelManager levelManager;
 
         public System.Action OnRestart;
 
@@ -70,6 +71,9 @@ namespace Strategy
             originalMoney = 10000;
             currentMoneyAmount = originalMoney;
             this.world = world;
+
+            levelManager = new LevelManager();
+            levelManager.LoadTextFile();
         }
 
         private void InitUnitList()
@@ -124,7 +128,7 @@ namespace Strategy
             score += 10;
             enemyKilledCount++; 
 
-            if (enemyKilledCount == EnemyManager.NUMBER_OF_ENEMIES)
+            if (enemyKilledCount == GetLevelInfo().Count)
             {
                 //victory
                 Globals.windowManager.SetWindow(Globals.victoryWindow);
@@ -146,5 +150,6 @@ namespace Strategy
         public GridItem GetGridItem(GridPosition position) => levelGrid.GetGridItem(position);
         public bool IsValidPosGrid(GridPosition position) => levelGrid.IsValidGridPos(position);
         public bool IsGridWalkable(GridPosition position) => levelGrid.GetGridItem(position).IsWalkable;
+        public List<LevelInfo> GetLevelInfo() => levelManager.levelInfos;
     }
 }

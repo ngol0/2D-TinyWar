@@ -27,7 +27,6 @@ namespace Strategy
         {
             foreach (var entityId in ActiveEntities) 
             {
-                Debug.WriteLine("ehhh");
                 var moneyGen = moneyGenerator.Get(entityId);
 
                 if (moneyGen != null) 

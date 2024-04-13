@@ -368,3 +368,6 @@
 /processorParam:TextureFormat=Color
 /build:graphic/tile_0001.png
 
+#begin level/0.txt
+/copy:level/0.txt
+
