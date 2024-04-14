@@ -28,7 +28,7 @@ namespace Strategy.UI
             spriteBatch.DrawString(
                 spriteFont, score, new Vector2(155, 180), Color.White, 0.0f, new Vector2(0, 0), 1.0f, SpriteEffects.None, 0.0f);
             spriteBatch.DrawString(
-                spriteFont, restart, new Vector2(155, 220), Color.White, 0.0f, new Vector2(0, 0), 1.0f, SpriteEffects.None, 0.0f);
+                spriteFont, restart, new Vector2(155, 350), Color.White, 0.0f, new Vector2(0, 0), 1.0f, SpriteEffects.None, 0.0f);
 
             spriteBatch.DrawString(
                 spriteFont, highScore, new Vector2(155, 280), Color.White, 0.0f, new Vector2(0, 0), 0.8f, SpriteEffects.None, 0.0f);

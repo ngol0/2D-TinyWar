@@ -13,10 +13,11 @@ namespace Strategy
     {
         Scene scene;
 
-        private ComponentMapper<EnemySpawner> enemySpawnerMapper;
+        //private ComponentMapper<EnemySpawner> enemySpawnerMapper;
         private ComponentMapper<Transform> transformMapper;
-        int count = 0;
         int currentIndex = 0;
+        float currentTimer;
+        bool endOfFile = false;
 
         public EnemySpawnSystem(Scene scene) : base(Aspect.All(typeof(EnemySpawner), typeof(Transform)))
         {
@@ -25,7 +26,7 @@ namespace Strategy
 
         public override void Initialize(IComponentMapperService mapperService)
         {
-            enemySpawnerMapper = mapperService.GetMapper<EnemySpawner>();
+            //enemySpawnerMapper = mapperService.GetMapper<EnemySpawner>();
             transformMapper = mapperService.GetMapper<Transform>();
 
             scene.OnRestart += Restart;
@@ -33,10 +34,11 @@ namespace Strategy
 
         public override void Process(GameTime gameTime, int entityId)
         {
-            var enemySpawner = enemySpawnerMapper.Get(entityId);
+            //var enemySpawner = enemySpawnerMapper.Get(entityId);
             var transform = transformMapper.Get(entityId);
 
-            enemySpawner.currentTimer += gameTime.GetElapsedSeconds();
+            //enemySpawner.currentTimer += gameTime.GetElapsedSeconds();
+            currentTimer += gameTime.GetElapsedSeconds();
 
             //if (enemySpawner.currentTimer > enemySpawner.spawnMaxTime && count <= EnemyManager.NUMBER_OF_ENEMIES && startingTimer >= 5.0f)
             //{
@@ -60,36 +62,36 @@ namespace Strategy
             {
                 int randomIndex = RandomUtils.Rand(0, EnemyTypeList.enemyTypeList.Count);
                 var enemyType = EnemyTypeList.enemyTypeList[randomIndex];
-                if (enemySpawner.currentTimer >= scene.GetLevelInfo()[currentIndex].timeToSpawn)
+                if (currentTimer >= scene.GetLevelInfo()[currentIndex].timeToSpawn && !endOfFile)
                 {
-                    //Debug.WriteLine(scene.GetLevelInfo()[currentIndex].laneNumber);
-                    //Debug.WriteLine(scene.GetLevelInfo()[currentIndex].timeToSpawn);
                     //spawn enemy
                     var enemy = Globals.entityFactory.CreateEnemy(
                         new Transform() { gridPos = transform.gridPos, worldPos = transform.worldPos, scale = transform.scale },
                         enemyType);
 
                     scene.EnemyManager.AddEnemyToLane(transform.gridPos.y);
-                    enemySpawner.currentTimer = 0;
+                    //enemySpawner.currentTimer = 0;
 
                     if (currentIndex < scene.GetLevelInfo().Count - 1)
                     {
                         currentIndex++;
                     }
+                    else if (currentIndex == scene.GetLevelInfo().Count - 1) endOfFile = true;
                 }
             }
         }
 
         private void Restart()
         {
-            count = 0;
             currentIndex = 0;
+            currentTimer = 0;
+            endOfFile = false;
 
             //reset currentTimer
-            foreach (var entity in ActiveEntities)
-            {
-                GetEntity(entity).Get<EnemySpawner>().currentTimer = 0;
-            }
+            //foreach (var entity in ActiveEntities)
+            //{
+            //    GetEntity(entity).Get<EnemySpawner>().currentTimer = 0;
+            //}
         }
     }
 }

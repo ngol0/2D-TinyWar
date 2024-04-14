@@ -48,11 +48,14 @@ namespace Strategy
         int enemyKilledCount;
         public EnemyManager EnemyManager => enemManager;
         #endregion
-        //
-        World world;
+
+        #region Other Managers
         LevelManager levelManager;
         HighScoreManager highScoreManager;
+        #endregion
 
+        //
+        World world;
         public System.Action OnRestart;
 
         public Scene() { }
