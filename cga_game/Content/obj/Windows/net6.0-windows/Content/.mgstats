@@ -1,5 +1,5 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"D:/Git/2D-TinyWar/cga_game/Content/../../../../City Uni London/plane.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/plane.xnb","TextureProcessor","Texture2DContent",210,1109,0.0644062
+"D:/Git/2D-TinyWar/cga_game/Content/../../../../City Uni London/plane.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/plane.xnb","TextureProcessor","Texture2DContent",210,1109,0.0680343
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/alien1.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/alien1.xnb","TextureProcessor","Texture2DContent",258,2389,0.0009062
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/alien2.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/alien2.xnb","TextureProcessor","Texture2DContent",255,2389,0.0009533
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/bat1.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/bat1.xnb","TextureProcessor","Texture2DContent",242,2389,0.0008456
@@ -8,6 +8,7 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/bomb.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/bomb.xnb","TextureProcessor","Texture2DContent",253,2389,0.0009136
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/bullet.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/bullet.xnb","TextureProcessor","Texture2DContent",161,1381,0.0006253
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/button.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/button.xnb","TextureProcessor","Texture2DContent",219,4181,0.0678055
+"D:/Git/2D-TinyWar/cga_game/Content/graphic/Frame 11.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/Frame 11.xnb","TextureProcessor","Texture2DContent",66551,1612885,0.027891
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/gameFont.spritefont","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/gameFont.xnb","FontDescriptionProcessor","SpriteFontContent",2009,70687,0.1221074
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/glow_frame_1.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/grid_outer.xnb","TextureProcessor","Texture2DContent",5292,250085,0.0040678
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/grass.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/grass.xnb","TextureProcessor","Texture2DContent",843,16469,0.0008897
@@ -18,7 +19,7 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/money_up.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/money_up.xnb","TextureProcessor","Texture2DContent",479,3669,0.0006162
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/money.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/money.xnb","TextureProcessor","Texture2DContent",205,1109,0.0006049
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/plane_red.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/plane_red.xnb","TextureProcessor","Texture2DContent",210,1109,0.000855
-"D:/Git/2D-TinyWar/cga_game/Content/graphic/plane.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/plane.xnb","TextureProcessor","Texture2DContent",210,1109,0.0007208
+"D:/Git/2D-TinyWar/cga_game/Content/graphic/plane.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/plane.xnb","TextureProcessor","Texture2DContent",210,1109,0.0006111
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/planebtn_up.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/planebtn_up.xnb","TextureProcessor","Texture2DContent",491,3669,0.0005766
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/resource.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/resource.xnb","TextureProcessor","Texture2DContent",197,1109,0.0005877
 "D:/Git/2D-TinyWar/cga_game/Content/graphic/robot1.png","D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/Content/graphic/robot1.xnb","TextureProcessor","Texture2DContent",231,2389,0.0005618

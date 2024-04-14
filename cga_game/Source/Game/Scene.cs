@@ -51,6 +51,7 @@ namespace Strategy
         //
         World world;
         LevelManager levelManager;
+        HighScoreManager highScoreManager;
 
         public System.Action OnRestart;
 
@@ -74,6 +75,10 @@ namespace Strategy
 
             levelManager = new LevelManager();
             levelManager.LoadTextFile();
+
+            highScoreManager = new HighScoreManager();
+            highScoreManager.Load();
+            Trace.WriteLine($"{highScoreManager.currentPlayerStat.Score}");
         }
 
         private void InitUnitList()
@@ -130,7 +135,9 @@ namespace Strategy
 
             if (enemyKilledCount == GetLevelInfo().Count)
             {
+                score += currentMoneyAmount / 100;
                 //victory
+                highScoreManager.Save(new PlayerStat() { Score = score });
                 Globals.windowManager.SetWindow(Globals.victoryWindow);
             }
         }
@@ -151,5 +158,7 @@ namespace Strategy
         public bool IsValidPosGrid(GridPosition position) => levelGrid.IsValidGridPos(position);
         public bool IsGridWalkable(GridPosition position) => levelGrid.GetGridItem(position).IsWalkable;
         public List<LevelInfo> GetLevelInfo() => levelManager.levelInfos;
+        public PlayerStat GetCurrentPlayerStat() => highScoreManager.currentPlayerStat;
+        public void Save(PlayerStat stat) => highScoreManager.Save(stat);
     }
 }

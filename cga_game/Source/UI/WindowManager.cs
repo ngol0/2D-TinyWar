@@ -76,6 +76,11 @@ namespace Strategy.UI
             return scene.Score;
         }
 
+        public int GetHighScore()
+        {
+            return scene.GetCurrentPlayerStat().Score;
+        }
+
         public Window GetCurrentWindow() { return currentWindow; }
     }
 }

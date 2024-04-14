@@ -20,6 +20,7 @@ namespace Strategy.UI
             string announcement = "You Lose :(";
             string score = "Score: " + Globals.windowManager.GetScore();
             string restart = "Press R to restart";
+            string highScore = "High Score: " + Globals.windowManager.GetHighScore();
 
             spriteBatch.DrawString(spriteFont, announcement, new Vector2(155, 100), Color.Black);
             spriteBatch.DrawString(spriteFont, announcement, new Vector2(154, 100), Color.White);
@@ -28,6 +29,9 @@ namespace Strategy.UI
                 spriteFont, score, new Vector2(155, 180), Color.White, 0.0f, new Vector2(0, 0), 1.0f, SpriteEffects.None, 0.0f);
             spriteBatch.DrawString(
                 spriteFont, restart, new Vector2(155, 220), Color.White, 0.0f, new Vector2(0, 0), 1.0f, SpriteEffects.None, 0.0f);
+
+            spriteBatch.DrawString(
+                spriteFont, highScore, new Vector2(155, 280), Color.White, 0.0f, new Vector2(0, 0), 0.8f, SpriteEffects.None, 0.0f);
         }
 
         public override bool IsInGame()

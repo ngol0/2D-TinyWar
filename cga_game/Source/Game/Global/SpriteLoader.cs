@@ -28,6 +28,9 @@ namespace Strategy
         //bullet
         public static Texture2D bulletTexture;
 
+        //start screen
+        public static Texture2D startHUDTexture;
+
 
         public static void LoadAllSprite(ContentManager content)
         {
@@ -53,6 +56,9 @@ namespace Strategy
 
             //bullet
             bulletTexture = content.Load<Texture2D>("graphic/bullet");
+
+            //HUD
+            startHUDTexture = content.Load<Texture2D>("graphic/Frame 11");
         }
     }
 }

@@ -21,8 +21,8 @@ namespace Strategy.UI
             spriteBatch.DrawString(spriteFont, announcement, new Vector2(155, 100), Color.Black);
             spriteBatch.DrawString(spriteFont, announcement, new Vector2(154, 100), Color.White);
 
-            spriteBatch.DrawString(spriteFont, control, new Vector2(155, 180), Color.Black);
-            spriteBatch.DrawString(spriteFont, control, new Vector2(154, 180), Color.White);
+            spriteBatch.DrawString(
+                spriteFont, control, new Vector2(155, 250), Color.White, 0.0f, new Vector2(0, 0), 0.8f, SpriteEffects.None, 0.0f);
         }
 
         public void Continue(eButtonState buttonState, Vector2 amount)

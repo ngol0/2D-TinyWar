@@ -37,6 +37,7 @@ namespace Strategy
             //lost condition
             if (transform.worldPos.X < -5) //lose
             {
+                scene.Save(new PlayerStat() { Score = scene.Score });
                 Globals.windowManager.SetWindow(Globals.gameOverWindow);
             }
         }
