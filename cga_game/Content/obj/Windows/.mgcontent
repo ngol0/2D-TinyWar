@@ -4,7 +4,6 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/Git/2D-TinyWar/cga_game/Content/../../../../City Uni London/plane.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/alien1.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/alien2.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/bat1.png</File>
@@ -15,7 +14,6 @@
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/button.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/Frame 11.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/gameFont.spritefont</File>
-    <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/glow_frame_1.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/grass.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/grid.png</File>
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/infantry_green.png</File>
@@ -37,7 +35,6 @@
     <File>D:/Git/2D-TinyWar/cga_game/Content/graphic/tile_0001.png</File>
   </SourceFiles>
   <DestFiles>
-    <File>graphic/plane.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
@@ -48,7 +45,6 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
-    <File>graphic/grid_outer.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

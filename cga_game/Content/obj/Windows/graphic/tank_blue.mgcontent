@@ -3,7 +3,7 @@
   <SourceFile>D:/Git/2D-TinyWar/cga_game/Content/graphic/tank_blue.png</SourceFile>
   <SourceTime>2023-08-08T10:35:47.4513574+01:00</SourceTime>
   <DestFile>D:/Git/2D-TinyWar/cga_game/Content/bin/Windows/graphic/tank_blue.xnb</DestFile>
-  <DestTime>2024-04-13T12:31:46.6994511+01:00</DestTime>
+  <DestTime>2024-04-15T11:50:23.3947076+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T12:44:56+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

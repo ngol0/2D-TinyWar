@@ -154,7 +154,6 @@ D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\gameFont.xnb
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\glow_frame_1.xnb
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\grass.xnb
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\grid.xnb
-D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\grid_outer.xnb
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\infantry.xnb
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\infantrybtn_up.xnb
 D:\Git\2D-TinyWar\cga_game\bin\Debug\net6.0-windows\Content\graphic\infantry_green.xnb
