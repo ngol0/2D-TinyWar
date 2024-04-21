@@ -31,12 +31,14 @@ namespace Strategy
 
                 if (moneyGen != null) 
                 {
+                    // increase timer for each money gen component
                     moneyGen.currentTimer += gameTime.GetElapsedSeconds();
 
+                    // add to money when timer reaches max timer
                     if (moneyGen.currentTimer > moneyGen.maxTimer)
                     {
                         scene.AddMoney(moneyGen.amount);
-                        moneyGen.currentTimer = 0;
+                        moneyGen.currentTimer = 0; //reset timer
                     }
                 }
             }

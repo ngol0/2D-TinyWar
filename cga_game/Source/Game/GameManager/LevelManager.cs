@@ -51,7 +51,7 @@ namespace Strategy
                     // Parse lane and time
                     if (parts.Length == 2 && int.TryParse(parts[0], out int lane) && int.TryParse(parts[1], out int time))
                     {
-                        // Create a new EnemyInfo object and add it to the list
+                        // Create a new LevelInfo object and add it to the list
                         LevelInfo enemyInfo = new LevelInfo(lane, time);
                         levelInfos.Add(enemyInfo);
                     }

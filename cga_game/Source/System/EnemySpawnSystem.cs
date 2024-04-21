@@ -13,7 +13,6 @@ namespace Strategy
     {
         Scene scene;
 
-        //private ComponentMapper<EnemySpawner> enemySpawnerMapper;
         private ComponentMapper<Transform> transformMapper;
         int currentIndex = 0;
         float currentTimer;
@@ -26,56 +25,41 @@ namespace Strategy
 
         public override void Initialize(IComponentMapperService mapperService)
         {
-            //enemySpawnerMapper = mapperService.GetMapper<EnemySpawner>();
             transformMapper = mapperService.GetMapper<Transform>();
-
             scene.OnRestart += Restart;
         }
 
         public override void Process(GameTime gameTime, int entityId)
         {
-            //var enemySpawner = enemySpawnerMapper.Get(entityId);
             var transform = transformMapper.Get(entityId);
 
-            //enemySpawner.currentTimer += gameTime.GetElapsedSeconds();
+            // increase timer
             currentTimer += gameTime.GetElapsedSeconds();
 
-            //if (enemySpawner.currentTimer > enemySpawner.spawnMaxTime && count <= EnemyManager.NUMBER_OF_ENEMIES && startingTimer >= 5.0f)
-            //{
-            //    //get a random enemy from enemy data list
-            //    int randomIndex = RandomUtils.Rand(0, EnemyTypeList.enemyTypeList.Count);
-            //    var enemyType = EnemyTypeList.enemyTypeList[randomIndex];
-
-            //    //spawn enemy
-            //    var enemy = Globals.entityFactory.CreateEnemy(
-            //        new Transform() { gridPos = transform.gridPos, worldPos = transform.worldPos, scale = transform.scale },
-            //        enemyType);
-
-            //    scene.EnemyManager.AddEnemyToLane(transform.gridPos.y);
-
-            //    enemySpawner.currentTimer = 0;
-            //    enemySpawner.spawnMaxTime = RandomUtils.Rand(10, 20);
-            //}
-
-
-            if (scene.GetLevelInfo()[currentIndex].laneNumber == transform.gridPos.y)
+            // check to see if which lane to spawn enemy based on the information in level info and not end of list
+            if (scene.GetLevelInfo()[currentIndex].laneNumber == transform.gridPos.y && !endOfFile)
             {
+                // get random enemy types
                 int randomIndex = RandomUtils.Rand(0, EnemyTypeList.enemyTypeList.Count);
                 var enemyType = EnemyTypeList.enemyTypeList[randomIndex];
-                if (currentTimer >= scene.GetLevelInfo()[currentIndex].timeToSpawn && !endOfFile)
+
+                // check to see if whether the current timer reaches the enemy spawn time in level info
+                if (currentTimer >= scene.GetLevelInfo()[currentIndex].timeToSpawn)
                 {
                     //spawn enemy
                     var enemy = Globals.entityFactory.CreateEnemy(
                         new Transform() { gridPos = transform.gridPos, worldPos = transform.worldPos, scale = transform.scale },
                         enemyType);
 
+                    // add enemy to the approriate lane
                     scene.EnemyManager.AddEnemyToLane(transform.gridPos.y);
-                    //enemySpawner.currentTimer = 0;
 
+                    // if not end of list - move to the next item
                     if (currentIndex < scene.GetLevelInfo().Count - 1)
                     {
                         currentIndex++;
                     }
+                    // else stop spawning
                     else if (currentIndex == scene.GetLevelInfo().Count - 1) endOfFile = true;
                 }
             }

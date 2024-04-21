@@ -17,15 +17,18 @@ namespace Strategy.UI
         {
             this.scene = scene;
 
+            // init window objects for FSM
             Globals.inGameWindow = new InGameWindow();
             Globals.startWindow = new StartWindow();
             Globals.victoryWindow = new VictoryWindow();
             Globals.gameOverWindow = new GameOverWindow();
             Globals.pauseWindow = new PauseWindow();
 
-            keyboardManager = new KeyboardManager();
-
+            // set the first window
             SetWindow(Globals.startWindow);
+
+            // init keyboard manager
+            keyboardManager = new KeyboardManager();
             InitKeyboardBinding();
         }
 

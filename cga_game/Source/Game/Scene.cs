@@ -152,7 +152,8 @@ namespace Strategy
             currentMoneyAmount = originalMoney;
             CollisionManager.Colliders.Clear();
 
-            OnRestart?.Invoke();
+            //fire an event to all the systems to restart their stats
+            OnRestart?.Invoke(); 
         }
 
         public GridPosition GetGridPosition(Vector2 worldPos) => levelGrid.GetGridPosition(worldPos);

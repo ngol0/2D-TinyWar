@@ -47,6 +47,7 @@ namespace Strategy
             Globals.windowManager = new WindowManager();
 
             scene = new Scene();
+
             world = new WorldBuilder()
                 .AddSystem(new MoneyGenerateSystem(scene))
                 .AddSystem(new UnitSpawnSystem(scene))

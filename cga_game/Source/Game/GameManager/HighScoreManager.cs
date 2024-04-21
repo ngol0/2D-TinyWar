@@ -12,6 +12,7 @@ namespace Strategy
     {
         private const string PATH = "stats.json";
         public PlayerStat currentPlayerStat;
+
         public void Save(PlayerStat playerStat)
         {
             if (playerStat.Score > currentPlayerStat.Score)
